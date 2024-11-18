@@ -1,19 +1,19 @@
 import {
-  AlignJustify,
-  BrickWall,
-  FileCheck,
-  LayoutDashboard,
-  Mail,
   MessageCircleMore,
+  FileCheck,
+  TimerReset,
+  TimerOff,
+  Mail,
+  BrickWall,
   MessageSquareText,
   SquareLibrary,
-  TimerOff,
-  TimerReset,
   User,
   Users,
+  LayoutDashboard,
+  AlignJustify,
 } from "lucide-react";
 
- export const sidebarItems = [
+export const sidebarItems = [
   { icon: MessageCircleMore, label: "Chat", color: "bg-orange-500" },
   { icon: FileCheck, label: "Quick Task", color: "bg-red-500" },
   { icon: TimerReset, label: "Time Clock", color: "bg-yellow-500" },
@@ -27,7 +27,7 @@ import {
 
 export const userItems = [
   { icon: User, label: "Users" },
-  { icon: Users, label: "Smart Groups" },
+  { icon: Users, label: "Smart groups" },
 ];
 
 export const OverviewItems = [
