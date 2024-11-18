@@ -4,17 +4,20 @@ import TopbarComponent from "@/components/topbarComponent";
 export default function Home() {
   return (
     <>
-      <div className="fixed top-0 left-0 w-full z-20 bg-white">
+      <div className="w-max shadow-md 1200:w-screen">
         <TopbarComponent />
       </div>
-      <div className="flex absolute top-[12%]">
+
+
+      {/* w-screen border-2 border-red-600 shadow-md */}
+      {/* <div className="flex absolute top-[12%]">
         <div className="h-screen">
           <SidebarComponent icon={""} label={""} />
         </div>
         <div className="flex-grow h-screen ml-4 w-screen bg-gray-200 rounded-md">
           hello
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
