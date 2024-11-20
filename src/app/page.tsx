@@ -1,13 +1,9 @@
-import DashboardComponent from "@/components/overviewPage";
+import DashboardComponent from "@/components/dashboardPage";
 
 export default function Home() {
   return (
     <>
-      <div className="">
-        <div className="">
-          <DashboardComponent />
-        </div>
-      </div>
+      <DashboardComponent />
     </>
   );
 }
