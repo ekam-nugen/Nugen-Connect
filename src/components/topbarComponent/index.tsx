@@ -39,10 +39,10 @@ const TopbarComponent = () => {
           <div className="flex items-center gap-2 px-2 border-l-2">
             <div className="relative">
               <div className="z-0 w-12 h-12 rounded-full">
-                <Image src={imagesss} alt="image" className="w-fill rounded-full h-full "/>
+                <Image src={imagesss} alt="image" className="w-fill rounded-full h-full " />
               </div>
               <div className="z-40 absolute h-6 -bottom-1 right-0 w-6 border-[3px] border-white rounded-full">
-                <Image src={imagesss} alt="image" className="w-full h-full rounded-full"/>
+                <Image src={imagesss} alt="image" className="w-full h-full rounded-full" />
               </div>
             </div>
             <div className="text-[#2998ff]">
@@ -53,6 +53,6 @@ const TopbarComponent = () => {
       </div>
     </>
   );
-};  
+};
 
 export default TopbarComponent;
