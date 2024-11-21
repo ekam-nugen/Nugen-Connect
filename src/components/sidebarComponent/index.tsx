@@ -67,7 +67,7 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
       </div>
 
       {/* sidebar components tabs */}
-      <div className="mb-4 px-2 h-full items-center">
+      <div className="mb-10 px-2 h-full items-center">
         {sidebarItems?.map((item: any, index: number) => (
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
@@ -101,11 +101,6 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
                   {item?.label}
                 </p>
               )}
-              {/* {!isCollapsed && (
-              <span className="absolute left-12 h-10 py-1 items-center flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-100 shadow-lg text-gray-700 text-nowrap text-sm rounded-md px-2 py-1 pointer-events-none">
-                {item?.label}
-              </span>
-            )} */}
               {isCollapsed && (
                 <div className="ml-auto flex justify-end">
                   <span className="group-hover:opacity-90 opacity-0 transition-opacity duration-300">
@@ -150,11 +145,6 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
                   {item?.label}
                 </p>
               )}
-              {/* {!isCollapsed && (
-              <span className="absolute left-12 h-10 py-1 items-center flex justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gray-100 shadow-lg text-gray-700 text-nowrap text-sm rounded-md px-2 py-1 pointer-events-none">
-                {item?.label}
-              </span>
-            )} */}
               {isCollapsed && (
                 <div className="ml-auto flex justify-end">
                   <span className="group-hover:opacity-90 opacity-0 transition-opacity duration-300">
@@ -175,19 +165,6 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
             <CirclePlus className="text-blue-500 h-4 w-4 hover:text-gray-400" />
           </span>
           {isCollapsed && <p className="text-blue-500">{ADD_NEW}</p>}
-        </div>
-      </div>
-      <div
-        className={`fixed bottom-0 left-0 w-48 border-1 border border-zinc-200 bg-white ${
-          !isCollapsed ? "w-16 hidden" : "w-48"
-        }`}
-      >
-        <hr />
-        <div className="mt-auto px-4 gap-4 flex items-center h-10 mt-2 hover:text-blue-500 gap-2 rounded-xl cursor-pointer">
-          <span className="text-white bg-blue-500 rounded-full">
-            <CirclePlus className="h-4 w-4" />
-          </span>
-          <p>{ADD_SECTION}</p>
         </div>
       </div>
     </div>

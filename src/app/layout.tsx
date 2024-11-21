@@ -2,15 +2,16 @@
 import TopbarComponent from "@/components/topbarComponent";
 import "./globals.css";
 import SidebarComponent from "@/components/sidebarComponent";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, CirclePlus } from "lucide-react";
 import { useState } from "react";
+import { ADD_SECTION } from "@/en";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isCollapsed, setIsCollapsed] = useState(true)
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
   return (
     <html lang="en">
@@ -35,8 +36,20 @@ export default function RootLayout({
               </button>
             </div>
             <SidebarComponent label="" icon="" isCollapsed={isCollapsed} />
+            <div
+              className={`fixed bottom-0 left-0 bg-white ${!isCollapsed ? "w-16 hidden" : "w-56"
+                }`}
+            >
+              <hr />
+              <div className="mt-auto px-4 gap-4 flex items-center h-10 mt-2 hover:text-blue-500 gap-2 rounded-xl cursor-pointer">
+                <span className="text-white bg-blue-500 rounded-full">
+                  <CirclePlus className="h-4 w-4" />
+                </span>
+                <p>{ADD_SECTION}</p>
+              </div>
+            </div>
           </div>
-          <div className="overflow-y-auto w-full h-full">{children}</div>
+          <div className="overflow-y-auto w-full h-full bg-[#f6f6f6]">{children}</div>
         </div>
       </body>
     </html>
