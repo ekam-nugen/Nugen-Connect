@@ -2,8 +2,10 @@ import { quickTask, attendance, checklistItems } from "@/json/dashboard";
 import { DropdownMenu } from "@/resuableComponents";
 import { Card, CardTitle, CardDescription } from "@/resuableComponents/card";
 import SearchBox from "@/resuableComponents/SearchBox";
-import { RotateCw } from "lucide-react";
+import { Button } from "@mui/material";
+import { GiUbisoftSun } from "react-icons/gi";
 import React from "react";
+import { RotateCw } from "lucide-react";
 
 function DashboardComponent() {
   return (
@@ -106,6 +108,28 @@ function DashboardComponent() {
             </Card>
           </div>
         ))}
+      </Card>
+
+      {/* daily Activity */}
+      <Card className="p-5 mt-5 mb-auto">
+        <div className="flex items-center justify-between">
+          <CardTitle className="text-xl text-zinc-700 font-bold p-2">
+            Daily Activity
+          </CardTitle>
+          <Button className="bg-white text-blue-500 text-lg flex px-4 py-2 justify-end gap-2 items-center capitalize rounded-3xl ring-2 ring-gray-200 hover:ring-blue-500">
+            View History
+          </Button>
+        </div>
+        <div className="flex flex-col justify-center items-center text-gray-300 mt-16">
+          <GiUbisoftSun className="h-32 w-60" />
+          <div className="text-blue-500 font-semibold text-2xl pt-4 pb-2">
+            There is nothing to display
+          </div>
+          <div className="text-gray-600 text-lg pt-2">
+            Your employees need to engage
+          </div>
+          <div className="text-gray-600 text-lg"> with your content</div>
+        </div>
       </Card>
     </div>
   );
