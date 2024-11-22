@@ -41,19 +41,19 @@ export default function RootLayout({
             <SidebarComponent label="" icon="" isCollapsed={isCollapsed} />
             <div
               className={`fixed bottom-0 left-0 bg-white ${
-                !isCollapsed ? "w-16 hidden" : "w-56"
+                !isCollapsed ? "w-16 hidden" : "w-40"
               }`}
             >
               <hr />
-              <div className="mt-auto py-4 px-4 gap-4 flex items-center hover:text-blue-500 gap-2 rounded-xl cursor-pointer">
+              <div className="mt-auto py-4 px-4 flex items-center hover:text-blue-500 gap-2 rounded-xl cursor-pointer">
                 <span className="text-white bg-blue-500 rounded-full ">
                   <CirclePlus className="h-4 w-4" />
                 </span>
-                <p>{ADD_SECTION}</p>
+                <p className="text-sm">{ADD_SECTION}</p>
               </div>
             </div>
           </div>
-          <div className="overflow-y-auto p-6 w-full h-full bg-[#f6f6f6]">
+          <div className="overflow-y-auto p-2 w-full h-full bg-[#f6f6f6]">
             {children}
           </div>
         </div>
