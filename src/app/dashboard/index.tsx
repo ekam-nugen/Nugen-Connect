@@ -1,4 +1,4 @@
-import DashboardComponent from "@/components/dashboardPage";
+import DashboardComponent from "@/components/dashboardComponent";
 import React from "react";
 
 function DashboardPage() {

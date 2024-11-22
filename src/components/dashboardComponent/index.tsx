@@ -1,3 +1,4 @@
+"use client";
 import { quickTask, attendance, checklistItems } from "@/json/dashboard";
 import { DropdownMenu } from "@/resuableComponents";
 import { Card, CardTitle, CardDescription } from "@/resuableComponents/card";
@@ -6,10 +7,11 @@ import { Button } from "@mui/material";
 import { GiUbisoftSun } from "react-icons/gi";
 import React from "react";
 import { RotateCw } from "lucide-react";
+import { motion } from "framer-motion";
 
 function DashboardComponent() {
   return (
-    <div className="mt-5">
+    <div className="m-5">
       <Card className="p-5">
         <CardTitle className="text-xl text-zinc-700 font-bold m-3">
           Quick Actions
@@ -37,9 +39,9 @@ function DashboardComponent() {
             Attendance
           </CardTitle>
           <div className="flex p-4 justify-end gap-2 items-center">
-            <SearchBox />
-            <div className="flex justify-center text-blue-500 bg-gary-200 h-8 w-8 rounded-full items-center cursor-pointer">
-              <RotateCw className="h-5 w-5" />
+            <SearchBox placeholder={"Search"} />
+            <div className="flex justify-center text-blue-500 bg-gary-200 h-10 w-10 border-2 rounded-full items-center cursor-pointer">
+              <RotateCw className="h-5 w-" />
             </div>
           </div>
         </div>
@@ -67,7 +69,7 @@ function DashboardComponent() {
             <DropdownMenu />
           </div>
           <div className="flex p-4 justify-end gap-2 items-center">
-            <SearchBox />
+            <SearchBox placeholder={"Search"} />
             <div className="flex justify-center text-blue-500 bg-gary-200 h-8 w-8 rounded-full items-center cursor-pointer">
               <RotateCw className="h-5 w-5" />
             </div>
@@ -76,13 +78,23 @@ function DashboardComponent() {
       </Card>
 
       {/* Activities */}
-      <Card className="p-5 mt-5">
+
+      <motion.div
+        className="p-5 mt-5 bg-white shadow-md rounded-lg"
+        initial={{ scale: 1 }}
+        animate={{ scale: [1, 1.01, 1, 1.01, 1] }}
+        transition={{
+          duration: 1.5,
+          repeat: 1,
+          ease: "easeInOut"
+        }}
+      >
         {checklistItems?.map((item, index) => (
           <div key={item.title + index} className="mb-4 shadow-sm rounded-xl">
             <Card className="flex w-full h-24 justify-between gap-5 rounded-x ">
               <div className="flex justify-start">
                 <div
-                  className={`${item.color}flex justify-start pr-3 rounded-l-xl`}
+                  className={`${item.color}flex justify-start pr-2.5 rounded-l-xl`}
                 ></div>
                 <div className="flex flex-col items-start justify-center max-w-full overflow-y-auto px-6 text-center">
                   <CardDescription className="text-lg px-4 text-zinc-600 font-normal text-start">
@@ -108,10 +120,10 @@ function DashboardComponent() {
             </Card>
           </div>
         ))}
-      </Card>
+      </motion.div>
 
       {/* daily Activity */}
-      <Card className="p-5 mt-5 mb-auto">
+      <Card className="p-5 my-5 mb-auto">
         <div className="flex items-center justify-between">
           <CardTitle className="text-xl text-zinc-700 font-bold p-2">
             Daily Activity
@@ -120,8 +132,8 @@ function DashboardComponent() {
             View History
           </Button>
         </div>
-        <div className="flex flex-col justify-center items-center text-gray-300 mt-16">
-          <GiUbisoftSun className="h-32 w-60" />
+        <div className="flex flex-col justify-center items-center text-gray-300 mt-10">
+          <GiUbisoftSun className="h-28 w-60" />
           <div className="text-blue-500 font-semibold text-2xl pt-4 pb-2">
             There is nothing to display
           </div>
