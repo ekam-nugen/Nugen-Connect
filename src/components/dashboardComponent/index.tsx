@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 
 function DashboardComponent() {
   return (
-    <div className="m-5">
+    <div className="">
       <Card className="p-5">
         <CardTitle className="text-xl text-zinc-700 font-bold m-3">
           Quick Actions

@@ -20,10 +20,10 @@ export default function RootLayout({
           <TopbarComponent />
         </div>
 
-        <div className="z-10 flex gap-2 h-[91%] overflow-auto">
+        <div className="z-10 flex h-[91%] overflow-auto">
           <div
             className={`overflow-y-auto h-full ${
-              isCollapsed ? "w-48" : "w-16"
+              isCollapsed ? "w-72" : "w-20"
             }`}
           >
             <div
@@ -41,11 +41,11 @@ export default function RootLayout({
             <SidebarComponent label="" icon="" isCollapsed={isCollapsed} />
             <div
               className={`fixed bottom-0 left-0 bg-white ${
-                !isCollapsed ? "w-16 hidden" : "w-40"
+                !isCollapsed ? "w-16 hidden" : "w-56"
               }`}
             >
               <hr />
-              <div className="py-4 px-4 flex items-center hover:text-blue-500 gap-2 rounded-xl cursor-pointer">
+              <div className="mt-auto py-4 px-4 gap-4 flex items-center hover:text-blue-500 gap-2 rounded-xl cursor-pointer">
                 <span className="text-white bg-blue-500 rounded-full ">
                   <CirclePlus className="h-4 w-4" />
                 </span>
