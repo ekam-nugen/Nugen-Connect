@@ -48,7 +48,7 @@ function Chats() {
         <Card className="h-full flex rounded-xl m-5">
           {/* people list */}
           <div className="w-[40%] border-r-2 ">
-            <div className="flex justify-between p-4 border-b-2 items-center justify-center">
+            <div className="flex justify-between p-4 border-b-2 items-center">
               <Button className="bg-blue-500 text-white rounded-3xl px-4 py-2">
                 Add New
               </Button>
@@ -104,9 +104,12 @@ function Chats() {
                             </div>
                           </div>
                           {/* pin and dates */}
-                          <div className="flex justify-end items-end px-4">
-                            <div className="">
+                          <div className="flex justify-end items-end pr-4">
+                            <div>
                               <BsPinAngle />
+                            </div>
+                            <div className="ellipsis-container opacity-0 hover:opacity-100">
+                              <Ellipsis />
                             </div>
                           </div>
                         </div>
