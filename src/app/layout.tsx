@@ -20,7 +20,7 @@ export default function RootLayout({
           <TopbarComponent />
         </div>
 
-        <div className="z-10 flex gap-2 h-[91%] overflow-auto">
+        <div className="z-10 flex h-[91%] overflow-auto">
           <div className={`overflow-y-auto h-full ${isCollapsed ? 'w-72' : 'w-20'}`}>
             <div
               className={`sticky z-40 top-0 bg-white flex ${isCollapsed
@@ -41,15 +41,15 @@ export default function RootLayout({
                 }`}
             >
               <hr />
-              <div className="mt-auto px-4 gap-4 flex items-center h-10 mt-2 hover:text-blue-500 gap-2 rounded-xl cursor-pointer">
-                <span className="text-white bg-blue-500 rounded-full">
+              <div className="mt-auto py-4 px-4 gap-4 flex items-center hover:text-blue-500 gap-2 rounded-xl cursor-pointer">
+                <span className="text-white bg-blue-500 rounded-full ">
                   <CirclePlus className="h-4 w-4" />
                 </span>
                 <p>{ADD_SECTION}</p>
-              </div>
+              </div>  
             </div>
           </div>
-          <div className="overflow-y-auto w-full h-full bg-[#f6f6f6]">{children}</div>
+          <div className="overflow-y-auto p-6 w-full h-full bg-[#f6f6f6]">{children}</div>
         </div>
       </body>
     </html>

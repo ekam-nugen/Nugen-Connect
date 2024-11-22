@@ -9,7 +9,7 @@ import { RotateCw } from "lucide-react";
 
 function DashboardComponent() {
   return (
-    <div className="mt-5">
+    <div className="">
       <Card className="p-5">
         <CardTitle className="text-xl text-zinc-700 font-bold m-3">
           Quick Actions

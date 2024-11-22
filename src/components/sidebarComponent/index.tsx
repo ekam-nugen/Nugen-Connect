@@ -17,9 +17,9 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
             placement="right"
+            key={index+item.label+item.label}
           >
             <div
-              key={index}
               className={`flex items-center mb-2 h-9 gap-2 rounded-md px-1 group hover:bg-gray-100 shadow-x-lg hover:cursor-pointer ${
                 !isCollapsed ? "justify-center" : ""
               }`}
@@ -44,9 +44,9 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
             placement="right"
+            key={index+item.label}
           >
             <div
-              key={index}
               className={`flex items-center mb-2 h-9 gap-2 rounded-md px-1 hover:bg-gray-100 group hover:cursor-pointer ${
                 !isCollapsed ? "justify-center" : ""
               }`}
@@ -71,10 +71,10 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
         {sidebarItems?.map((item: any, index: number) => (
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
+            key={index+item.label}
             placement="right"
           >
             <div
-              key={index}
               className={`flex items-center mb-0.5 h-10 gap-2 rounded-md px-1 hover:bg-gray-100 transition-all group relative hover:cursor-pointer ${
                 !isCollapsed
                   ? "justify-center gap-2"
@@ -116,9 +116,9 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
             placement="right"
+            key={index+item.label+11}
           >
             <div
-              key={index}
               className={`flex items-center mb-0.5 h-10 gap-2 rounded-md px-1 hover:bg-gray-100 transition-all group relative hover:cursor-pointer ${
                 !isCollapsed
                   ? "justify-center gap-2"
@@ -157,7 +157,7 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
         ))}
 
         <div
-          className={`flex items-center mb-auto px-2 h-10 mt-2 hover:text-blue-500 gap-2 rounded-xl ${
+          className={`pb-6 flex items-center px-2 h-10 mt-2 hover:text-blue-500 gap-2 rounded-xl ${
             !isCollapsed ? "justify-center" : ""
           }`}
         >
