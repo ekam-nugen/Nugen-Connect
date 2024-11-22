@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import TopbarComponent from "@/components/topbarComponent";
 import "./globals.css";
 import SidebarComponent from "@/components/sidebarComponent";
@@ -7,11 +7,11 @@ import { useState } from "react";
 import { ADD_SECTION } from "@/en";
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isCollapsed, setIsCollapsed] = useState(true)
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
   return (
     <html lang="en">
@@ -20,13 +20,16 @@ export default function RootLayout({
           <TopbarComponent />
         </div>
 
-        <div className="z-10 flex h-[91%] overflow-auto">
-          <div className={`overflow-y-auto h-full ${isCollapsed ? 'w-72' : 'w-20'}`}>
+        <div className="z-10 flex gap-2 h-[91%] overflow-auto">
+          <div
+            className={`overflow-y-auto h-full ${
+              isCollapsed ? "w-48" : "w-16"
+            }`}
+          >
             <div
-              className={`sticky z-40 top-0 bg-white flex ${isCollapsed
-                ? "justify-end px-2"
-                : "justify-center"
-                }`}
+              className={`sticky z-40 top-0 bg-white flex ${
+                isCollapsed ? "justify-end px-2" : "justify-center"
+              }`}
             >
               <button
                 onClick={toggleSidebar}
@@ -37,8 +40,9 @@ export default function RootLayout({
             </div>
             <SidebarComponent label="" icon="" isCollapsed={isCollapsed} />
             <div
-              className={`fixed bottom-0 left-0 bg-white ${!isCollapsed ? "w-16 hidden" : "w-56"
-                }`}
+              className={`fixed bottom-0 left-0 bg-white ${
+                !isCollapsed ? "w-16 hidden" : "w-56"
+              }`}
             >
               <hr />
               <div className="mt-auto py-4 px-4 gap-4 flex items-center hover:text-blue-500 gap-2 rounded-xl cursor-pointer">
@@ -46,10 +50,12 @@ export default function RootLayout({
                   <CirclePlus className="h-4 w-4" />
                 </span>
                 <p>{ADD_SECTION}</p>
-              </div>  
+              </div>
             </div>
           </div>
-          <div className="overflow-y-auto p-6 w-full h-full bg-[#f6f6f6]">{children}</div>
+          <div className="overflow-y-auto p-6 w-full h-full bg-[#f6f6f6]">
+            {children}
+          </div>
         </div>
       </body>
     </html>
