@@ -56,7 +56,7 @@ export const checklistItems = [
     icon: <ChevronRight />,
     progress: "5/10",
     status: "in_progress",
-    color: "bg-gradient-to-b from-teal-900 via-cyan-500 to-green-900"
+    color: "bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 "
   },
   {
     id: 4,
@@ -102,6 +102,6 @@ export const checklistItems = [
     icon: <Download />,
     progress: "",
     status: "pending",
-    color: "bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500"
+    color: "bg-gradient-to-b from-teal-900 via-cyan-500 to-green-900"
   }
 ];
