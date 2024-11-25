@@ -1,23 +1,72 @@
-import { Card, CardDescription, CardTitle } from "@/resuableComponents/card";
-import { Check } from "lucide-react";
+"use client";
+import { Card, CardTitle } from "@/resuableComponents/card";
+import SmallCard from "@/resuableComponents/smallCard";
+import VideoPlayer from "@/resuableComponents/vedioCard";
+import { Check, X } from "lucide-react";
 import React from "react";
+import { PiNumberThreeBold } from "react-icons/pi";
 
 function LeftSideDashboard() {
   return (
-    <div className="flex flex-col">
-      <Card className="flex flex-col justify-center items-center p-4 w-80">
-        <div className="text-center mb-2">
-          <div className="bg-green-100 h-12 w-12 rounded-full flex justify-center items-center">
-            <Check className="text-green-500 h-6 w-6" />
-          </div>
+    <div className="flex flex-col gap-4">
+      <SmallCard
+        title={"You're in the clear"}
+        description={
+          "New time off requests, shift requests, and requests to join the app will show up right here"
+        }
+        icon={<Check />}
+        iconClassName="text-green-500"
+        className={"bg-green-100"}
+      />
+
+      {/* vedio */}
+      <Card className="p-4">
+        <div className="flex justify-between items-center">
+          <CardTitle className="text-xl font-bold text-zinc-600">
+            All about Connecteam
+          </CardTitle>
+          <X className="h-4 w-4" />
         </div>
-        <CardTitle className="text-sm font-bold leading-5">
-          You're in the clear
-        </CardTitle>
-        <CardDescription className="text-sm font-normal text-gray-600 text-center">
-          New time off requests, shift requests, and requests to join the app
-          will show up right here
-        </CardDescription>
+        <div>{/* vedio */}</div>
+      </Card>
+
+      {/*  get credit*/}
+      <SmallCard
+        description={
+          "Get up to 170$ worth of credits to use when upgrading to our paid"
+        }
+        descriptionClassName="text-sm"
+        buttonLabel={" Get Credit"}
+        imageUrl=""
+      />
+
+      {/* select users */}
+      <SmallCard
+        description={"Users didn't log in to the app yet"}
+        buttonLabel="Select users to invite"
+        icon={<PiNumberThreeBold />}
+        iconClassName="text-white bg-gradient-to-r from-blue-600 to-violet-600 rounded-md text-2xl shadow-xl"
+      />
+
+      {/* alerts */}
+      <SmallCard
+        description={"No new alerts to display at this time"}
+        descriptionClassName="text-base text-blue-500"
+        title="You’re all caught up"
+        titleClassName="text-blue-500 text-xl"
+        icon={<Check />}
+        iconClassName="text-white bg-blue-500 rounded-full"
+        heading="Alerts"
+      />
+
+      {/* achieve milestones */}
+      <Card className="p-4">
+        <div className="flex justify-between items-center">
+          <CardTitle className="text-xl font-bold text-zinc-600">
+            Achieved milestones
+          </CardTitle>
+        </div>
+        <div></div>
       </Card>
     </div>
   );

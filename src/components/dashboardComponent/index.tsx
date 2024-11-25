@@ -12,8 +12,8 @@ import LeftSideDashboard from "../leftSideDashboard";
 
 function DashboardComponent() {
   return (
-    <div className="flex">
-      <div className="m-5">
+    <div className="flex justify-between m-5 gap-4">
+      <div className="w-full">
         <Card className="p-5 shadow-none">
           <CardTitle className="text-xl text-zinc-700 font-bold m-3">
             Quick Actions
@@ -96,7 +96,7 @@ function DashboardComponent() {
               <Card className="flex w-full h-24 justify-between gap-5 rounded-x ">
                 <div className="flex justify-start">
                   <div
-                    className={`${item.color}flex justify-start pr-2.5 rounded-l-xl`}
+                    className={`${item.color} flex justify-start pr-2.5 rounded-l-xl`}
                   ></div>
                   <div className="flex flex-col items-start justify-center max-w-full overflow-y-auto px-6 text-center">
                     <CardDescription className="text-lg px-4 text-zinc-600 font-normal text-start">
@@ -147,7 +147,7 @@ function DashboardComponent() {
         </Card>
       </div>
       {/* leftsidedashboard */}
-      <div className="mt-5">
+      <div className="flex justify-end">
         <LeftSideDashboard />
       </div>
     </div>
