@@ -1,0 +1,71 @@
+import { Button, Card } from "@mui/material";
+import React from "react";
+import { CardDescription, CardTitle } from "../card";
+
+export interface SmallCardProps {
+  title?: string;
+  description: string;
+  icon?: React.ReactNode;
+  imageUrl?: string;
+  heading?: string;
+  className?: string;
+  buttonLabel?: string;
+  iconClassName?: string;
+  cardClassName?: string;
+  titleClassName?: string;
+  descriptionClassName?: string;
+}
+
+const SmallCard: React.FC<SmallCardProps> = ({
+  title,
+  heading,
+  imageUrl,
+  description,
+  icon,
+  buttonLabel,
+  className,
+  iconClassName,
+  cardClassName,
+  titleClassName,
+  descriptionClassName
+}) => {
+  return (
+    <div className="flex flex-col">
+      <Card className={`${cardClassName} flex flex-col  p-4 w-80 shadow-none `}>
+        <div className="text-xl font-bold text-zinc-600 flex justify-start items-start">
+          {heading}
+        </div>
+        <div className="px-8 py-4 flex flex-col justify-center items-center">
+          <div className="text-center mb-2 pt-2">
+            <div
+              className={`h-12 w-12 rounded-full flex justify-center items-center ${className} ${iconClassName}`}
+            >
+              {icon && <div className={`h-6 w-6  ${className}`}>{icon}</div>}
+            </div>
+          </div>
+          {title && (
+            <CardTitle
+              className={`text-sm font-bold leading-5 tracking-wide  ${titleClassName}`}
+            >
+              {title}
+            </CardTitle>
+          )}
+          {description && (
+            <CardDescription
+              className={`text-sm font-normal text-gray-600 text-center tracking-wide ${descriptionClassName}`}
+            >
+              {description}
+            </CardDescription>
+          )}
+          {buttonLabel && (
+            <Button className="ring-2 ring-gray-200 text-blue-500 bg-white hover:bg-gray-100 rounded-2xl mt-3 capitalize px-4 text-sm">
+              {buttonLabel}
+            </Button>
+          )}
+        </div>
+      </Card>
+    </div>
+  );
+};
+
+export default SmallCard;
