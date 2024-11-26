@@ -1,11 +1,11 @@
+import Events from '@/components/events'
 import React from 'react'
-import SmartGroup from '@/components/smartGroup'
 
 
 export default function page() {
     return (
         <>
-            <SmartGroup />
+            <Events />
         </>
     )
 }
