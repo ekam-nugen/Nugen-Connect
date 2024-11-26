@@ -12,7 +12,7 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
       className={`overflow-y-auto transition-all
       duration-100 ease-in-out`}
     >
-      <div className="mb-2 px-1 h-full">
+      <div className="mb-2 px-2 h-full">
         {OverviewItems.map((item: any, index: number) => (
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
@@ -40,7 +40,7 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
       </div>
 
       {/* user Area */}
-      <div className="mb-2 px-1 h-full">
+      <div className="mb-2 px-2 h-full">
         {userItems?.map((item: any, index: number) => (
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
