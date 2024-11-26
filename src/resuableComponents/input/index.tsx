@@ -11,13 +11,13 @@ import {
   AlertCircle,
   Search,
   LoaderCircle,
-  Asterisk,
+  Asterisk
 } from "lucide-react";
 import {
   Tooltip,
   TooltipProvider,
   TooltipTrigger,
-  TooltipContent,
+  TooltipContent
 } from "../tooltip";
 
 export interface InputProps
@@ -68,7 +68,12 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const [showPassword, setShowPassword] = useState(false);
 
     return (
-      <div className={cn("flex flex-col items-start gap-1 w-full", className)}>
+      <div
+        className={cn(
+          "flex flex-col items-start gap-1 w-full bg-white",
+          className
+        )}
+      >
         {(label || icon || requiredField) && (
           <div className="flex justify-between items-center px-3 w-full">
             <div className="flex gap-0.5">
@@ -79,7 +84,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                   labelClass,
                   {
                     "text-red-500": error,
-                    "text-slate-700/40": disabled,
+                    "text-slate-700/40": disabled
                   }
                 )}
               >
@@ -90,7 +95,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 <Asterisk
                   size={12}
                   className={cn(" text-red-500 cursor-pointer", iconClass, {
-                    "opacity-40": disabled,
+                    "opacity-40": disabled
                   })}
                 />
               )}
@@ -106,7 +111,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                         iconClass,
                         {
                           "text-red-500": error,
-                          "opacity-40": disabled,
+                          "opacity-40": disabled
                         }
                       )}
                     />
@@ -122,13 +127,13 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         <div className="relative w-full ">
           <input
             className={cn(
-              "flex h-10 rounded-md border-1 border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none w-full placeholder:text-sm placeholder:text-medium",
+              "flex h-10 bg-white border-none px-3 py-2 text-base file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none w-full placeholder:text-base placeholder:text-medium",
               inputBoxClass,
               {
                 "border border-red-500": error,
                 "disabled:cursor-not-allowed disabled:opacity-50 bg-slate-500/20 text-slate-900":
                   disabled,
-                "pl-10": searchIcon,
+                "pl-10": searchIcon
               }
             )}
             type={showPassword ? "text" : type}
@@ -157,7 +162,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                   setShowPassword(!showPassword);
                 }}
                 className={cn("text-slate-600", {
-                  "text-red-500": error,
+                  "text-red-500": error
                 })}
               >
                 {showPassword ? <Eye /> : <EyeOff />}
@@ -170,7 +175,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className={cn(
               "max-w-fit font-normal text-xs pt-1 px-2 whitespace-pre-wrap",
               {
-                "text-red-500": error,
+                "text-red-500": error
               }
             )}
           >
