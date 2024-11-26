@@ -8,6 +8,56 @@ import { CiChat1 } from 'react-icons/ci'
 
 
 export default function page() {
+    const cards = [
+        {
+            title: 'Add title',
+            description: 'Hi this is new title and everyone please get updated with this',
+            image: image
+        },
+        {
+            title: 'Add title',
+            description: 'Hi this is new title and everyone please get updated with this',
+            image: image
+        },
+        {
+            title: 'Add title',
+            description: 'Hi this is new title and everyone please get updated with this',
+            image: image
+        }
+    ]
+
+    const smallcards = [
+        {
+            title: 'Add title',
+            icon: <CiChat1 />,
+            iconColor: "text-yellow-500"
+        },
+        {
+            title: 'Add title',
+            icon: <CiChat1 />,
+            iconColor: "text-yellow-500"
+        },
+        {
+            title: 'Add title',
+            icon: <CiChat1 />,
+            iconColor: "text-yellow-500"
+        },
+        {
+            title: 'Add title',
+            icon: <CiChat1 />,
+            iconColor: "text-yellow-500"
+        },
+        {
+            title: 'Add title',
+            icon: <CiChat1 />,
+            iconColor: "text-yellow-500"
+        },
+        {
+            title: 'Add title',
+            icon: <CiChat1 />,
+            iconColor: "text-yellow-500"
+        }
+    ]
     return (
         <div className='bg-white flex flex-col items-center rounded-3xl p-8'>
             <VideoPlayer
@@ -24,21 +74,22 @@ export default function page() {
             </div>
 
             <div className="flex gap-4">
-                <CardWithImage title="Add title" img={image} description="Hi this is new title and everyone please get updated with this " />
-                <CardWithImage title="Add title" img={image} description="Hi this is new title and everyone please get updated with this " />
-                <CardWithImage title="Add title" img={image} description="Hi this is new title and everyone please get updated with this " />
+                {cards.map((value, index) => {
+                    return <>
+                        <CardWithImage key={value.title + index} title={value.title} img={value.image} description={value.description} />
+                    </>
+                })}
             </div>
 
             <p className='text-xl font-bold text-[#3f4648] py-8'>So smart, you can base them on anything</p>
 
             <div className="flex flex-wrap w-1/2 gap-4 justify-center items-center">
-                <SmallCard title={"hiiiiii"} icon={<CiChat1 />} iconColor={"text-yellow-500"} />
-                <SmallCard title={"hiiiiii"} icon={<CiChat1 />} iconColor={"text-yellow-500"} />
-                <SmallCard title={"hiiiiii"} icon={<CiChat1 />} iconColor={"text-yellow-500"} />
-                <SmallCard title={"hiiiiii"} icon={<CiChat1 />} iconColor={"text-yellow-500"} />
-                <SmallCard title={"hiiiiii"} icon={<CiChat1 />} iconColor={"text-yellow-500"} />
-                <SmallCard title={"hiiiiii"} icon={<CiChat1 />} iconColor={"text-yellow-500"} />
 
+                {smallcards.map((value, index) => {
+                    return <>
+                        <SmallCard key={value.title + index + value.title} title={value.title} icon={value.icon} iconColor={value.iconColor} />
+                    </>
+                })}
             </div>
 
 
