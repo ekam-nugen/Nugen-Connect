@@ -39,3 +39,10 @@
 ::-webkit-scrollbar-thumb {
   background: #888
 }
+
+.image {
+  object-fit: contain;
+  width: 100% !important;
+  position: relative !important;
+  height: unset !important;
+}
