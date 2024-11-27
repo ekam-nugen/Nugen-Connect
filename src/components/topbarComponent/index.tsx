@@ -33,7 +33,7 @@ const TopbarComponent = () => {
             <div className="text-2xl">
               <CgGirl />
             </div>
-            <div className="whitespace-nowrap">Talk to an Expert</div>
+            <div className="whitespace-nowrap hidden 1200:flex 1200:visible">Talk to an Expert</div>
           </div>
           <div className="text-[#2998ff] flex items-center px-2 border-l-2">
             Help

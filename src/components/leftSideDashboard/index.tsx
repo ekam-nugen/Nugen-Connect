@@ -1,14 +1,14 @@
 "use client";
 import { Card, CardTitle } from "@/resuableComponents/card";
 import SmallCard from "@/resuableComponents/smallCard";
-import VideoPlayer from "@/resuableComponents/vedioCard";
 import { Check, X } from "lucide-react";
 import React from "react";
 import { PiNumberThreeBold } from "react-icons/pi";
+import VideoPlayer from "../VideoPlayer";
 
 function LeftSideDashboard() {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 items-center">
       <SmallCard
         title={"You're in the clear"}
         description={
@@ -27,7 +27,15 @@ function LeftSideDashboard() {
           </CardTitle>
           <X className="h-4 w-4" />
         </div>
-        <div>{/* vedio */}</div>
+        <div className="w-[290px] h-[173px]">
+          <VideoPlayer
+            src="/video/smart_groups_activiation.mp4"
+            type="video/mp4"
+            controls
+            autoPlay={true}
+            loop
+          />
+        </div>
       </Card>
 
       {/*  get credit*/}
@@ -37,7 +45,7 @@ function LeftSideDashboard() {
         }
         descriptionClassName="text-sm"
         buttonLabel={" Get Credit"}
-        imageUrl=""
+        imageUrl="https://app.connecteam.com/images/base-line/boarding/widgets/free-credits.svg"
       />
 
       {/* select users */}

@@ -16,14 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="h-screen">
-        {/* <div className="shadow-md w-max 1200:w-full sticky z-50 top-0 bg-white h-[9%]">
-          <TopbarComponent />
-        </div> */}
 
         <div className="z-10 flex gap-2 h-[91%] overflow-auto ">
           <div
             className={`overflow-y-auto h-full ${
-              isCollapsed ? "w-48" : "w-16"
+              isCollapsed ? "w-56" : "w-16"
             }`}
           >
             <div
@@ -41,7 +38,7 @@ export default function RootLayout({
             <SidebarComponent label="" icon="" isCollapsed={isCollapsed} />
             <div
               className={`fixed bottom-0 left-0 bg-white ${
-                !isCollapsed ? "w-16 hidden" : "w-40"
+                !isCollapsed ? "w-16 hidden" : "w-44"
               }`}
             >
               <hr />
@@ -53,7 +50,7 @@ export default function RootLayout({
               </div>
             </div>
           </div>
-          <div className="overflow-y-auto p-2 w-full h-full bg-[#f6f6f6]">
+          <div className="overflow-y-auto w-full h-full bg-[#f6f6f6]">
             {children}
           </div>
         </div>
