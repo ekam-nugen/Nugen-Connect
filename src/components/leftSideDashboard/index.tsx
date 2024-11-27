@@ -1,7 +1,6 @@
 "use client";
 import { Card, CardTitle } from "@/resuableComponents/card";
 import SmallCard from "@/resuableComponents/smallCard";
-import VideoPlayer from "@/resuableComponents/vedioCard";
 import { Check, X } from "lucide-react";
 import React from "react";
 import { PiNumberThreeBold } from "react-icons/pi";
