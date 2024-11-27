@@ -1,15 +1,8 @@
-
-import { Card } from "@/resuableComponents/card";
-import SearchBox from "@/resuableComponents/SearchBox";
-import { Button } from "@mui/material";
-import { BsPinAngle } from "react-icons/bs";
-
 "use client";
-import { Card } from "@/resuableComponents/card";
+import { Card, CardDescription } from "@/resuableComponents/card";
 import SearchBox from "@/resuableComponents/SearchBox";
 import { Button } from "@mui/material";
 import { BsPinFill } from "react-icons/bs";
-
 import {
   Ellipsis,
   GraduationCap,
@@ -17,9 +10,7 @@ import {
   Settings
 } from "lucide-react";
 import React from "react";
-
 import ChatBox from "./chatBox";
-
 
 export const chatsMenu = [
   { heading: "All" },
@@ -32,12 +23,7 @@ export const chatPerson = [
   { title: "Connecteam Tips", description: "" },
   {
     title: "Pardeep Kumar",
-
-    description:
-      "hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii"
-
     description: "hiiiiiiiiiiiiiiiiiiiiiiiii"
-
   },
   { title: "Harmandeep Singh", description: "" }
 ];
@@ -50,33 +36,20 @@ export type ChatPerson = {
 export type ChatsMenu = {
   heading: string;
 };
-
-function Chats() {
-  return (
-    <div className="m-5">
-      <Card className="w-[100%]">
-        <div className="text-xl text-blue-500 flex justify-center gap-4">
-
 const Chats = () => {
   return (
     <div className="m-5 h-auto">
       <Card className="w-[100%] h-full">
         <div className="text-xl text-blue-500 flex justify-center gap-4  mt-2.5">
-
           <MessagesSquare />
           CHATS
         </div>
 
-        {/* chat */}
+        {/* {/ chat /} */}
         <Card className="h-full flex rounded-xl m-5">
-          {/* people list */}
-
-          <div className="w-[40%] border-r-2 ">
-            <div className="flex justify-between p-4 border-b-2 items-center justify-center">
-
+          {/* {/ people list /} */}
           <div className="w-[460px] border-r-2">
             <div className="flex justify-between p-4 border-b-2 items-center">
-
               <Button className="bg-blue-500 text-white rounded-3xl px-4 py-2">
                 Add New
               </Button>
@@ -92,55 +65,28 @@ const Chats = () => {
                 </div>
               </div>
             </div>
-            {/* chats details */}
+            {/* {/ chats details /} */}
             <div className="m-5">
               <div className="p-4">
                 <SearchBox placeholder={"Search"} />
               </div>
 
-              {/* chatMenus */}
+              {/* {/ chatMenus /} */}
               <div className="flex gap-2 px-4">
                 {chatsMenu?.map((items, index) => (
                   <div key={items?.heading + index}>
-
-                    <div className="rounded-full bg-blue-100 text-blue-500 px-3 py-1 font-bold text-md">
-
                     <div className="rounded-full bg-blue-100 text-blue-500 px-3 py-1 font-bold text-sm">
-
                       {items?.heading}
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* chats people */}
+              {/* {/ chats people /} */}
               <div className="h-full mt-4">
                 <div>
                   {chatPerson.map((items, index) => (
                     <div key={items?.title + index}>
-
-                      <Card className="border-none shadow-none flex">
-                        <div className="flex pl-2 px-4 py-4 justify-between items-center rounded-2xl hover:bg-gray-100 gap-2 w-full">
-                          <div className="flex justify-start gap-2">
-                            <div className="rounded-full border-gary-200 bg-green-900 border h-12 w-12 flex items-center justify-center">
-                              pk
-                            </div>
-                            <div className="flex flex-col px-1 w-1/2 justify-start items-start">
-                              <div className="text-lg font-medium truncate w-[200px] text-zinc-600">
-                                {items?.title}
-                              </div>
-                              {items.description && (
-                                <div className="text-md font-normal truncate w-[200px] text-zinc-400 ">
-                                  {items?.description}
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                          {/* pin and dates */}
-                          <div className="flex justify-end items-end px-4">
-                            <div className="">
-                              <BsPinAngle />
-
                       <Card
                         className="border-none shadow-none flex h-16 w-[400px]"
                         key={items?.title + index}
@@ -169,7 +115,7 @@ const Chats = () => {
                               </div>
                             </div>
                           </div>
-                          {/* pin and dates */}
+                          {/* {/ pin and dates /} */}
 
                           <div className="flex flex-col justify-end gap-1.5">
                             <div className="text-sm text-gray-400 ml-2">
@@ -190,16 +136,11 @@ const Chats = () => {
                                   <Ellipsis className="text-gray-400 h-3 w-3" />
                                 </div>
                               )}
-
                             </div>
                           </div>
                         </div>
                       </Card>
-
-                      <hr className="border-b-1 border-gray-100" />
-
                       <hr className="border-t-1 border-gray-100" />
-
                     </div>
                   ))}
                 </div>
@@ -207,10 +148,7 @@ const Chats = () => {
             </div>
           </div>
 
-          {/* chat area */}
-
-          <div className="w-[60%] ">hii</div>
-
+          {/* {/ chat area /} */}
           <ChatBox
             onSendMessage={function (message: string): void {
               throw new Error("Function not implemented.");
@@ -220,10 +158,6 @@ const Chats = () => {
       </Card>
     </div>
   );
-
-}
-
 };
-
 
 export default Chats;
