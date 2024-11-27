@@ -9,6 +9,7 @@ import React from "react";
 import { RotateCw } from "lucide-react";
 import { motion } from "framer-motion";
 import LeftSideDashboard from "../leftSideDashboard";
+import TimeClock from "@/resuableComponents/timeClock/timeClock";
 
 function DashboardComponent() {
   return (
@@ -150,6 +151,7 @@ function DashboardComponent() {
       <div className="flex justify-end">
         <LeftSideDashboard />
       </div>
+    
     </div>
   );
 }
