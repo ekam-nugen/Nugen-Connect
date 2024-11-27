@@ -16,11 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="h-screen">
-        <div className="shadow-md w-max 1200:w-full sticky z-50 top-0 bg-white h-[9%]">
+        {/* <div className="shadow-md w-max 1200:w-full sticky z-50 top-0 bg-white h-[9%]">
           <TopbarComponent />
-        </div>
+        </div> */}
 
-        <div className="z-10 flex gap-2 h-[91%] overflow-auto">
+        <div className="z-10 flex gap-2 h-[91%] overflow-auto ">
           <div
             className={`overflow-y-auto h-full ${
               isCollapsed ? "w-48" : "w-16"
