@@ -20,6 +20,9 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
             key={index + item.label + item.label}
           >
             <div
+
+              className={`flex items-center mb-2 h-9 gap-2 rounded-md px-1 group hover:bg-gray-100 shadow-x-lg hover:cursor-pointer ${
+
               key={item.label + index}
               className={`flex items-center mb-2 h-9 rounded-md px-1 group hover:bg-gray-100 shadow-x-lg hover:cursor-pointer ${
                 !isCollapsed ? "justify-center" : ""
@@ -48,8 +51,12 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
             key={index + item.label}
           >
             <div
+
+              className={`flex items-center mb-2 h-9 gap-2 rounded-md px-1 hover:bg-gray-100 group hover:cursor-pointer ${
+
               key={item.label + index}
               className={`flex items-center mb-2 h-9 rounded-md px-1 hover:bg-gray-100 group hover:cursor-pointer ${
+
                 !isCollapsed ? "justify-center" : ""
               }`}
             >
@@ -69,7 +76,11 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
       </div>
 
       {/* sidebar components tabs */}
+
+      <div className="mb-10 px-2 h-full items-center">
+
       <div className="mb-4 h-full items-center">
+
         {sidebarItems?.map((item: any, index: number) => (
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
@@ -77,8 +88,12 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
             placement="right"
           >
             <div
+
+              className={`flex items-center mb-0.5 h-10 gap-2 rounded-md px-1 hover:bg-gray-100 transition-all group relative hover:cursor-pointer ${
+
               key={item.label + index}
               className={`flex items-center mb-0.5 h-10 rounded-md pr-1 hover:bg-gray-100 transition-all group relative hover:cursor-pointer ${
+
                 !isCollapsed
                   ? "justify-center px-1"
                   : "duration-500 hover:translate-x-1 transition-transform mr-4"
@@ -123,10 +138,15 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
             title={`${isCollapsed ? "" : item?.label}`}
             key={index + item.label}
             placement="right"
+            key={index + item.label + 11}
           >
             <div
+
+              className={`flex items-center mb-0.5 h-10 gap-2 rounded-md px-1 hover:bg-gray-100 transition-all group relative hover:cursor-pointer ${
+
               key={item.label + index}
               className={`flex items-center mb-0.5 h-10 rounded-md pr-1 hover:bg-gray-100 transition-all group relative hover:cursor-pointer ${
+
                 !isCollapsed
                   ? "justify-center"
                   : "duration-500 hover:translate-x-1 transition-transform mr-4"
@@ -156,7 +176,7 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
                 </p>
               )}
               {isCollapsed && (
-                <div className="ml-auto flex justify-end">
+                <div className="ml-auto flex justify-end pr-4">
                   <span className="group-hover:opacity-90 opacity-0 transition-opacity duration-300">
                     <EllipsisVertical className="h-4 w-4 text-gray-500" />
                   </span>
