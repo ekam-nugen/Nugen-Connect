@@ -27,7 +27,7 @@ function LeftSideDashboard() {
           </CardTitle>
           <X className="h-4 w-4" />
         </div>
-        <div className="w-[308px] h-[173px]">
+        <div className="w-[290px] h-[173px]">
           <VideoPlayer
             src="/video/smart_groups_activiation.mp4"
             type="video/mp4"
