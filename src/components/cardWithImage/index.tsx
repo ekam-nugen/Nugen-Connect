@@ -2,13 +2,13 @@ import { Card } from "@/resuableComponents/card";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 
-interface cardWithImageType {
+interface CardWithImageType {
   img?: string | StaticImageData;
   title?: string;
   description?: string;
 }
 
-const CardWithImage: React.FC<cardWithImageType> = ({
+const CardWithImage: React.FC<CardWithImageType> = ({
   img,
   title,
   description

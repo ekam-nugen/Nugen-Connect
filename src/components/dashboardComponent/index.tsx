@@ -12,7 +12,7 @@ import LeftSideDashboard from "../leftSideDashboard";
 
 function DashboardComponent() {
   return (
-    <div className="flex justify-between m-5 gap-4">
+    <div className="flex justify-between gap-4">
       <div className="w-full">
         <Card className="p-5 shadow-none">
           <CardTitle className="text-xl text-zinc-700 font-bold m-3">
