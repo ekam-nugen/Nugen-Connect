@@ -53,7 +53,7 @@ export default function RootLayout({
               </div>
             </div>
           </div>
-          <div className="overflow-y-auto p-6 w-full h-full bg-[#f6f6f6]">
+          <div className="overflow-y-auto w-full h-full bg-[#f6f6f6]">
             {children}
           </div>
         </div>

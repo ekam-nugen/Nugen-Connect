@@ -1,5 +1,5 @@
 "use client";
-import { Card, CardDescription } from "@/resuableComponents/card";
+import { Card } from "@/resuableComponents/card";
 import SearchBox from "@/resuableComponents/SearchBox";
 import { Button } from "@mui/material";
 import { BsPinFill } from "react-icons/bs";

@@ -75,13 +75,15 @@ export default function Events() {
   ];
   return (
     <div className="bg-white flex flex-col items-center rounded-3xl p-8">
-      <VideoPlayer
-        src="/video/smart_groups_activiation.mp4"
-        type="video/mp4"
-        controls
-        autoPlay={true}
-        loop
-      />
+      <div className="w-[538px] h-[303px]">
+        <VideoPlayer
+          src="/video/smart_groups_activiation.mp4"
+          type="video/mp4"
+          controls
+          autoPlay={true}
+          loop
+        />
+      </div>
       <div className="flex flex-col items-center w-3/5 py-8">
         <div className="text-3xl font-bold text-[#3f4648]">
           Get Started with Events
@@ -97,14 +99,12 @@ export default function Events() {
       <div className="flex flex-wrap justify-center gap-4">
         {cards.map((value, index) => {
           return (
-            <>
-              <CardWithImage
-                key={value?.title + index}
-                title={value?.title}
-                img={value?.image}
-                description={value?.description}
-              />
-            </>
+            <CardWithImage
+              key={value?.title + index}
+              title={value?.title}
+              img={value?.image}
+              description={value?.description}
+            />
           );
         })}
       </div>
@@ -116,14 +116,12 @@ export default function Events() {
       <div className="flex flex-wrap w-3/5 gap-4 justify-center items-center">
         {smallcards.map((value, index) => {
           return (
-            <>
-              <SmallCard
-                key={value?.title + index + value?.title}
-                title={value?.title}
-                icon={value?.icon}
-                iconColor={value?.iconColor}
-              />
-            </>
+            <SmallCard
+              key={value?.title + index + value?.title}
+              title={value?.title}
+              icon={value?.icon}
+              iconColor={value?.iconColor}
+            />
           );
         })}
       </div>

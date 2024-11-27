@@ -6,6 +6,7 @@ interface VideoPlayerProps {
   controls?: boolean;
   autoPlay?: boolean;
   loop?: boolean;
+  className?: string;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
@@ -14,14 +15,15 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   controls = true,
   autoPlay = true,
   loop = false,
+  className
 }) => {
   return (
-    <div className="w-[538px] h-[303px] ">
+    <div className="w-full h-full ">
       <video
         controls={controls}
         autoPlay={autoPlay}
         loop={loop}
-        className="w-full h-full rounded-3xl"
+        className="w-full h-full rounded-xl"
       >
         <source src={src} type={type} />
       </video>
