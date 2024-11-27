@@ -84,14 +84,12 @@ export default function SmartGroup() {
       <div className="flex flex-wrap justify-center gap-4">
         {cards.map((value, index) => {
           return (
-            <>
-              <CardWithImage
-                key={value?.title + index}
-                title={value?.title}
-                img={value?.image}
-                description={value?.description}
-              />
-            </>
+            <CardWithImage
+              key={value?.title + index}
+              title={value?.title}
+              img={value?.image}
+              description={value?.description}
+            />
           );
         })}
       </div>
@@ -103,14 +101,12 @@ export default function SmartGroup() {
       <div className="flex flex-wrap w-4/5 gap-4 justify-center items-center">
         {smallcards.map((value, index) => {
           return (
-            <>
-              <SmallCard
-                key={value?.title + index + value?.title}
-                title={value?.title}
-                icon={value?.icon}
-                iconColor={value?.iconColor}
-              />
-            </>
+            <SmallCard
+              key={value?.title + index + value?.title}
+              title={value?.title}
+              icon={value?.icon}
+              iconColor={value?.iconColor}
+            />
           );
         })}
       </div>
