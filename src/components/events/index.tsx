@@ -1,9 +1,9 @@
 import CardWithImage from "@/components/cardWithImage";
-import VideoPlayer from "@/components/VideoPlayer";
+import VideoPlayer from "@/resuableComponents/VideoPlayer";
 import { Button } from "@/resuableComponents";
 import React from "react";
 import image from "../../../public/Waterfall-landscape.jpg";
-import SmallCard from "@/components/smallCard";
+import SmallCard from "@/resuableComponents/smallCard";
 import { CiChat1 } from "react-icons/ci";
 import {
   Armchair,
@@ -120,7 +120,7 @@ export default function Events() {
               key={value?.title + index + value?.title}
               title={value?.title}
               icon={value?.icon}
-              iconColor={value?.iconColor}
+              description={""}
             />
           );
         })}

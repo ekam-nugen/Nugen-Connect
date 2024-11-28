@@ -1,6 +1,8 @@
-import { Button, Card } from "@mui/material";
+import { Card } from "@/resuableComponents/card";
 import React from "react";
 import { CardDescription, CardTitle } from "../card";
+import { Button } from "@mui/material";
+import Image from "next/image";
 
 export interface SmallCardProps {
   title?: string;
@@ -41,6 +43,15 @@ const SmallCard: React.FC<SmallCardProps> = ({
               className={`h-12 w-12 rounded-full flex justify-center items-center ${className} ${iconClassName}`}
             >
               {icon && <div className={`h-6 w-6  ${className}`}>{icon}</div>}
+              {imageUrl && (
+                <Image
+                  className="h-16 w-16"
+                  src={imageUrl}
+                  width={100}
+                  height={100}
+                  alt="image"
+                />
+              )}
             </div>
           </div>
           {title && (
