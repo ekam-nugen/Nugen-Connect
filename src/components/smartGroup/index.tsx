@@ -1,10 +1,10 @@
 import CardWithImage from "@/components/cardWithImage";
-import VideoPlayer from "@/components/VideoPlayer";
+import VideoPlayer from "@/resuableComponents/VideoPlayer";
 import { Button } from "@/resuableComponents";
 import React from "react";
 import image from "../../../public/Waterfall-landscape.jpg";
-import SmallCard from "@/components/smallCard";
 import { CiChat1 } from "react-icons/ci";
+import SmallCardWithIcon from "../../resuableComponents/smallCardWithIcon";
 
 export default function SmartGroup() {
   const cards = [
@@ -62,13 +62,15 @@ export default function SmartGroup() {
   ];
   return (
     <div className="bg-white flex flex-col items-center rounded-3xl p-8">
-      <VideoPlayer
-        src="/video/smart_groups_activiation.mp4"
-        type="video/mp4"
-        controls
-        autoPlay={true}
-        loop
-      />
+      <div className="w-[538px] h-[303px]">
+        <VideoPlayer
+          src="/video/smart_groups_activiation.mp4"
+          type="video/mp4"
+          controls
+          autoPlay={true}
+          loop
+        />
+      </div>
       <div className="flex flex-col items-center w-1/2 py-8">
         <div className="text-3xl font-bold text-[#3f4648]">
           Not ordinary groups. Meet Smart Groups.
@@ -101,7 +103,7 @@ export default function SmartGroup() {
       <div className="flex flex-wrap w-4/5 gap-4 justify-center items-center">
         {smallcards.map((value, index) => {
           return (
-            <SmallCard
+            <SmallCardWithIcon
               key={value?.title + index + value?.title}
               title={value?.title}
               icon={value?.icon}

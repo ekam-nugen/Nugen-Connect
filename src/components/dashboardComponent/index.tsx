@@ -12,8 +12,20 @@ import LeftSideDashboard from "../leftSideDashboard";
 
 function DashboardComponent() {
   return (
-    <div className="flex justify-between m-5 gap-4">
+    <div className="flex justify-between gap-4">
       <div className="w-full">
+        {/* Scroll Animation Wrapper */}
+        {/* <motion.div
+          className="w-full"
+          initial={{ y: 0 }}
+          animate={{ y: [-600] }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 25,
+            duration: 1
+          }}
+        > */}
         <Card className="p-5 shadow-none">
           <CardTitle className="text-xl text-zinc-700 font-bold m-3">
             Quick Actions
@@ -145,6 +157,7 @@ function DashboardComponent() {
             <div className="text-gray-600 text-lg"> with your content</div>
           </div>
         </Card>
+        {/* </motion.div> */}
       </div>
       {/* {/ leftsidedashboard /} */}
       <div className="flex justify-end">

@@ -14,8 +14,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   type,
   controls = true,
   autoPlay = true,
-  loop = false,
-  className
+  loop = false
 }) => {
   return (
     <div className="w-full h-full ">
