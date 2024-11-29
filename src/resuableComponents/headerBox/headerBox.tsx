@@ -20,7 +20,6 @@ const HeaderBox = ({
   buttonLabel,
   secondayButtonIcon,
   secondrayButtonLabel,
-  secondaryButtonClassName,
   borderClassName
 }: HeaderBoxProp) => {
   return (
