@@ -28,7 +28,7 @@ const TimeClock = ({
   return (
     <div className="flex justify-start p-3">
       <Card className="h-auto rounded-lg w-full border-gray-200 shadow-none border hover:shadow-md">
-        <div className="flex justify-center bg-blue-50 pt-7">
+        <div className="flex justify-center bg-gradient-to-b from-white to-blue-50 pt-7">
           <Image
             src="https://app.connecteam.com/images/categories/punch-clock/main-page/punch-clock-active.svg"
             alt="A sample image from Unsplash"
