@@ -7,15 +7,19 @@ import {
   Ellipsis,
   GraduationCap,
   MessagesSquare,
-  Settings
+  Settings,
 } from "lucide-react";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ChatBox from "./chatBox";
+
+import IconTextModal from "@/resuableComponents/iconTextModal";
+import { MdOutlineArchive } from "react-icons/md";
+import { RiShutDownLine } from "react-icons/ri";
 
 export const chatsMenu = [
   { heading: "All" },
   { heading: "Unread" },
-  { heading: "Teams" }
+  { heading: "Teams" },
 ];
 
 export const chatPerson = [
@@ -23,9 +27,9 @@ export const chatPerson = [
   { title: "Connecteam Tips", description: "" },
   {
     title: "Pardeep Kumar",
-    description: "hiiiiiiiiiiiiiiiiiiiiiiiii"
+    description: "hiiiiiiiiiiiiiiiiiiiiiiiii",
   },
-  { title: "Harmandeep Singh", description: "" }
+  { title: "Harmandeep Singh", description: "" },
 ];
 
 export type ChatPerson = {
@@ -36,7 +40,39 @@ export type ChatPerson = {
 export type ChatsMenu = {
   heading: string;
 };
+export const ModalCardData2 = [
+  { icon: <MdOutlineArchive />, text: "Archived Conversation" },
+  { icon: <RiShutDownLine />, text: "Deactivate" },
+];
+
 const Chats = () => {
+  const [modalcard, setModalcard] = useState(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  const openModel = () => {
+    setModalcard(true);
+  };
+  const closeModel = () => {
+    setModalcard(false);
+  };
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalcard &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        closeModel();
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [modalcard]);
+
   return (
     <div className="m-5 h-auto">
       <Card className="w-[100%] h-full">
@@ -53,10 +89,19 @@ const Chats = () => {
               <Button className="bg-blue-500 text-white rounded-3xl px-4 py-2">
                 Add New
               </Button>
-              <div className="justify-end flex gap-2 pl-2">
+              <div className="justify-end flex gap-2 pl-2" onClick={openModel}>
                 <div className="rounded-full border-gary-200 border h-10 w-10 flex items-center justify-center">
                   <Ellipsis className="text-blue-500 h-5  w-5 " />
                 </div>
+
+                {modalcard && (
+                  <div className="absolute pt-12  z-50  flex justify-center items-center">
+                    <div ref={modalRef}>
+                      <IconTextModal Modaldata={ModalCardData2} />
+                    </div>
+                  </div>
+                )}
+
                 <div className="rounded-full border-gary-200 border h-10 w-10 flex items-center justify-center">
                   <Settings className="text-blue-500 h-5 w-5" />
                 </div>
@@ -122,7 +167,7 @@ const Chats = () => {
                               15/06/2004
                             </div>
 
-                            <div className="flex justify-end items-end pr-4 gap-2">
+                            <div className="flex justify-end items-end pr-4 gap-2 ">
                               {BsPinFill && (
                                 <div>
                                   <BsPinFill
@@ -133,7 +178,7 @@ const Chats = () => {
                               )}
                               {Ellipsis && (
                                 <div className="ellipsis-container opacity-0 group-hover:opacity-100">
-                                  <Ellipsis className="text-gray-400 h-3 w-3" />
+                                  <Ellipsis className="text-gray-400 h-3  w-3" />
                                 </div>
                               )}
                             </div>

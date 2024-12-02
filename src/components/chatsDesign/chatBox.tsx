@@ -1,16 +1,35 @@
 "use client";
 import { Input } from "@/resuableComponents";
+import IconTextModal from "@/resuableComponents/iconTextModal";
 import { Users, Search, Ellipsis, Link2, AtSign, Mic } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaRegSmileBeam } from "react-icons/fa";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 import { IoSend } from "react-icons/io5";
+import { LiaFileExportSolid } from "react-icons/lia";
 import { MdAttachFile } from "react-icons/md";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 interface ChatInputProps {
   onSendMessage: (message: string) => void;
 }
+export const ModalCardData1 = [
+  { icon: <RiDeleteBin6Line />, text: "Delete Account" },
+  { icon: <LiaFileExportSolid />, text: "Export Data" },
+  { icon: <IoIosInformationCircleOutline />, text: "View Profile" },
+];
+
 const ChatBox: React.FC<ChatInputProps> = ({ onSendMessage }) => {
   const [text, setText] = useState<string>("");
+  const [modalcard, setModalcard] = useState(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  const openModel = () => {
+    setModalcard(true);
+  };
+  const closeModel = () => {
+    setModalcard(false);
+  };
 
   const handleSend = () => {
     if (text.trim()) {
@@ -18,6 +37,24 @@ const ChatBox: React.FC<ChatInputProps> = ({ onSendMessage }) => {
       setText("");
     }
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalcard &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        closeModel();
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [modalcard]);
 
   return (
     <div className="w-full">
@@ -37,11 +74,26 @@ const ChatBox: React.FC<ChatInputProps> = ({ onSendMessage }) => {
           <div className="rounded-full border-gary-200 border h-10 w-10 flex items-center justify-center">
             <Search className="text-blue-500 h-5  w-5 " />
           </div>
-          <div className="rounded-full border-gary-200 border h-10 w-10 flex items-center justify-center">
-            <Ellipsis className="text-blue-500 h-5 w-5" />
+          <div
+            className="rounded-full border-gary-200 border h-10 w-10 flex items-center justify-center"
+            onClick={openModel}
+          >
+            <Ellipsis className="text-blue-500 h-5 z-50 w-5" />
           </div>
+
+          {modalcard && (
+            <div
+              className="absolute pt-12  z-50  flex justify-center items-center"
+              onClick={closeModel}
+            >
+              <div ref={modalRef}>
+                <IconTextModal Modaldata={ModalCardData1} />
+              </div>
+            </div>
+          )}
         </div>
       </div>
+
       <div className="bg-blue-100 h-[500px] w-full"></div>
       <div className="bg-blue-100 pb-5">
         <div className="mx-5 pb-4 pt-2 px-5 gap-2 bg-white border border-gray-300 rounded-xl flex flex-col">
