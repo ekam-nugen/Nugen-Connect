@@ -4,12 +4,17 @@ import { Button } from "@mui/material";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function Verification() {
   const [phone, setPhone] = useState<string>("");
 
+  const router = useRouter();
   const handlePhoneChange = (value: any) => {
     setPhone(value);
+  };
+  const handleChange = () => {
+    router.push("./otpVerification");
   };
 
   return (
@@ -36,7 +41,10 @@ function Verification() {
         We will send you a code to verify your number
       </div>
       <div className="text-center mt-5">
-        <Button className="bg-[#2998ff] hover:bg-[#2381D9] text-white font-bold py-2 px-4 rounded-full normal-case">
+        <Button
+          className="bg-[#2998ff] hover:bg-[#2381D9] text-white font-bold py-2 px-4 rounded-full normal-case"
+          onClick={handleChange}
+        >
           Verify
         </Button>
       </div>
