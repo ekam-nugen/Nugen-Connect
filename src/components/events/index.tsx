@@ -4,75 +4,9 @@ import { Button } from "@/resuableComponents";
 import React from "react";
 import image from "../../../public/Waterfall-landscape.jpg";
 import SmallCard from "@/resuableComponents/smallCard";
-import { CiChat1 } from "react-icons/ci";
-import {
-  Armchair,
-  ArrowRightFromLine,
-  MonitorSmartphone,
-  TimerReset,
-  UserRound,
-  Wallpaper
-} from "lucide-react";
+import { cards, smallcards } from "@/json/event";
 
 export default function Events() {
-  const cards = [
-    {
-      title: "Detailed events",
-      description:
-        "Add a detailed description to any event, including location, media and a gorgeous event cover",
-      image: image
-    },
-    {
-      title: "Attendance tracking",
-      description:
-        "Allow users to register to an event and view who's attending from their colleagues",
-      image: image
-    },
-    {
-      title: "Advanced settings",
-      description:
-        "Fully customize your event's preferences with advanced options to suit any need",
-      image: image
-    }
-  ];
-
-  const smallcards = [
-    {
-      title: "Customizable cover image",
-      icon: <Wallpaper />,
-      iconColor: "text-blue-500"
-    },
-    {
-      title: "Schedule ahead and save time",
-      icon: <TimerReset />,
-      iconColor: "text-purple-500"
-    },
-    {
-      title: "Manage number of spots per event",
-      icon: <Armchair />,
-      iconColor: "text-cyan-500"
-    },
-    {
-      title: "Set registration limitations",
-      icon: <UserRound />,
-      iconColor: "text-green-500"
-    },
-    {
-      title: "Live mobile preview when creating an event",
-      icon: <MonitorSmartphone />,
-      iconColor: "text-emeranld-500"
-    },
-    {
-      title: "Engaging comments thread for each event ",
-      icon: <CiChat1 />,
-      iconColor: "text-yellow-500"
-    },
-    {
-      title: "Export attendance reports",
-      icon: <ArrowRightFromLine />,
-      iconColor: "text-red-500"
-    }
-  ];
   return (
     <div className="bg-white flex flex-col items-center rounded-3xl p-8">
       <div className="w-[538px] h-[303px]">
