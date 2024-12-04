@@ -1,7 +1,5 @@
 import React from "react";
-import { RiDeleteBin6Line } from "react-icons/ri";
-import { LiaFileExportSolid } from "react-icons/lia";
-import { IoIosInformationCircleOutline } from "react-icons/io";
+import LoginUserIcon from "../loginUserIcon";
 
 export interface ModalDataItem {
   icon: React.ReactNode;
@@ -9,11 +7,20 @@ export interface ModalDataItem {
 }
 interface IconTextModalProps {
   Modaldata: ModalDataItem[];
+  loginUserIcon?: boolean;
 }
 
-const IconTextModal = ({ Modaldata }: IconTextModalProps) => {
+const IconTextModal = ({ Modaldata, loginUserIcon }: IconTextModalProps) => {
   return (
-    <div className="shadow-2xl  rounded-xl w-fit p-2 bg-white">
+    <div className="shadow-2xl rounded-xl w-fit p-2 mx-4 mt-1 mb-4 bg-white">
+      {loginUserIcon && (
+        <>
+          <div className="pb-2">
+            <LoginUserIcon />
+          </div>
+          <hr className="border-1   border-gray-200 " />
+        </>
+      )}
       <div className="rounded-xl ">
         {Modaldata.map((item, index) => (
           <div

@@ -78,7 +78,7 @@ const ChatBox: React.FC<ChatInputProps> = ({ onSendMessage }) => {
             className="rounded-full border-gary-200 border h-10 w-10 flex items-center justify-center"
             onClick={openModel}
           >
-            <Ellipsis className="text-blue-500 h-5 z-50 w-5" />
+            <Ellipsis className="text-blue-500 h-5 w-5" />
           </div>
 
           {modalcard && (

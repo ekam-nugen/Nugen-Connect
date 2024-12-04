@@ -1,17 +1,60 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import image from "../../../public/theme_logo.png";
 import SearchBox from "@/resuableComponents/SearchBox";
 import { Button } from "@/resuableComponents";
-import { CgGirl } from "react-icons/cg";
+import { CgGirl, CgLogOff, CgProfile } from "react-icons/cg";
 import { MdAccessibility } from "react-icons/md";
 import { PiChats } from "react-icons/pi";
-import { IoMdNotificationsOutline } from "react-icons/io";
-import { RiCustomerService2Line } from "react-icons/ri";
+import {
+  IoIosInformationCircleOutline,
+  IoIosNotificationsOutline,
+  IoMdNotificationsOutline,
+} from "react-icons/io";
+import { RiCustomerService2Line, RiDeleteBin6Line } from "react-icons/ri";
 import imagesss from "../../../public/Waterfall-landscape.jpg";
+import IconTextModal from "@/resuableComponents/iconTextModal";
+import { LiaFileExportSolid } from "react-icons/lia";
+import { IoSettingsOutline } from "react-icons/io5";
+
+export const ModalCardData3 = [
+  { icon: <CgProfile />, text: "Switch to user's view" },
+  { icon: <IoSettingsOutline />, text: "Setting" },
+  { icon: <IoIosNotificationsOutline />, text: "Notification" },
+  { icon: <CgProfile />, text: "Admin dashboard" },
+
+  { icon: <CgLogOff />, text: "Sign out" },
+];
 
 const TopbarComponent = () => {
+  const [modalcard, setModalcard] = useState(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const openModel = () => {
+    setModalcard(true);
+  };
+  const closeModel = () => {
+    setModalcard(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalcard &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        closeModel();
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [modalcard]);
+
   return (
     <div className="py-2 px-4 w-full flex items-center justify-between">
       <div className="flex gap-2 shrink">
@@ -70,9 +113,21 @@ const TopbarComponent = () => {
             />
           </div>
         </div>
-        <div className="text-[#2998ff]">
+
+        <div className="text-[#2998ff] text-nowrap" onClick={openModel}>
           <p>Pardeep Kumar</p>
         </div>
+
+        {modalcard && (
+          <div
+            className="absolute pt-52 mt-16  z-50  flex  right-1     items-center "
+            onClick={closeModel}
+          >
+            <div className="flex" ref={modalRef}>
+              <IconTextModal Modaldata={ModalCardData3} loginUserIcon={true} />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
