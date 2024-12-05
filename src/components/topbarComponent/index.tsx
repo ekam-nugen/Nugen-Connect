@@ -8,15 +8,13 @@ import { CgGirl, CgLogOff, CgProfile } from "react-icons/cg";
 import { MdAccessibility } from "react-icons/md";
 import { PiChats } from "react-icons/pi";
 import {
-  IoIosInformationCircleOutline,
   IoIosNotificationsOutline,
-  IoMdNotificationsOutline,
+  IoMdNotificationsOutline
 } from "react-icons/io";
-import { RiCustomerService2Line, RiDeleteBin6Line } from "react-icons/ri";
+import { RiCustomerService2Line } from "react-icons/ri";
 import imagesss from "../../../public/Waterfall-landscape.jpg";
-import IconTextModal from "@/resuableComponents/iconTextModal";
-import { LiaFileExportSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
+import IconTextModal from "@/resuableComponents/iconTextModal";
 
 export const ModalCardData3 = [
   { icon: <CgProfile />, text: "Switch to user's view" },
@@ -24,7 +22,7 @@ export const ModalCardData3 = [
   { icon: <IoIosNotificationsOutline />, text: "Notification" },
   { icon: <CgProfile />, text: "Admin dashboard" },
 
-  { icon: <CgLogOff />, text: "Sign out" },
+  { icon: <CgLogOff />, text: "Sign out" }
 ];
 
 const TopbarComponent = () => {

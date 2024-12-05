@@ -40,12 +40,12 @@ const HeaderBox = ({
               </div>
             </div>
           </div>
-          <div className="px-2">
+          <div className="px-2 gap-4 flex">
             {buttonIcon && (
               <div className="pl-1">
-                <div className="border border-gray-300 hover:border-blue-500 rounded-full flex gap-2 justify-center items-center px-2 py-2">
+                <div className="border border-gray-300 hover:border-blue-500 rounded-full flex gap-1 justify-center items-center px-2 py-2">
                   {buttonIcon && (
-                    <div className="h-5 w-5 text-blue-500 flex items-center">
+                    <div className="h-6 w-6 text-blue-500 flex items-center">
                       {buttonIcon}
                     </div>
                   )}
@@ -60,16 +60,16 @@ const HeaderBox = ({
 
             {secondayButtonIcon && (
               <div
-                className={`border border-gray-300 bg-white gap-2 flex rounded-full items-center justify-center px-2 py-2 ${borderClassName}`}
+                className={`border border-gray-300 bg-white gap-2 flex hover:border-blue-500 rounded-full items-center justify-center px-2 py-2 ${borderClassName}`}
               >
-                {secondayButtonIcon && (
-                  <div className="h-5 w-5 items-center flex">
-                    {secondayButtonIcon}
+                {secondrayButtonLabel && (
+                  <div className="text-base font-normal text-blue-500">
+                    {secondrayButtonLabel}
                   </div>
                 )}
-                {secondrayButtonLabel && (
-                  <div className="text-base font-normal">
-                    {secondrayButtonLabel}
+                {secondayButtonIcon && (
+                  <div className="h-6 w-6 items-center flex">
+                    {secondayButtonIcon}
                   </div>
                 )}
               </div>
