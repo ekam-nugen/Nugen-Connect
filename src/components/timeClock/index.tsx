@@ -3,7 +3,7 @@ import { Card } from "@/resuableComponents/card";
 import FilterSearchHeader from "@/resuableComponents/filterSearchHeader";
 import HeaderBox from "@/resuableComponents/headerBox/headerBox";
 import { Button } from "@mui/material";
-import { CircleCheck, Filter, GraduationCap, Timer } from "lucide-react";
+import { CircleCheck, GraduationCap, PlusCircle, Timer } from "lucide-react";
 import React, { useState } from "react";
 import { TbLayoutBottombarCollapse } from "react-icons/tb";
 import Image from "next/image";
@@ -86,6 +86,9 @@ function TimeClockComponent() {
             buttonIcon={<IoMdArrowDropdown />}
             filter
             searchbox
+            buttonLabel="Export"
+            secondaryButtonIcon={<PlusCircle />}
+            secondaryButtonLabel="Add New"
           />
           <hr className="border-1 border-gray-200 mb-3 mx-5" />
 

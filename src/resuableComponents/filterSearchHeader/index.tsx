@@ -10,14 +10,16 @@ export interface FilterSearchHeaderProps {
   filter?: boolean;
   searchbox?: boolean;
   secondaryButtonLabel?: string;
-  datePickerWithRange?: boolean;
+  buttonLabel?: string;
+  secondaryButtonIcon?: React.ReactNode;
 }
 const FilterSearchHeader = ({
   buttonIcon,
   filter,
   searchbox,
   secondaryButtonLabel,
-  datePickerWithRange,
+  buttonLabel,
+  secondaryButtonIcon
 }: FilterSearchHeaderProps) => {
   return (
     <Card className="bg-white border-none shadow-none rounded-none flex justify-between px-5 py-8">
@@ -42,29 +44,32 @@ const FilterSearchHeader = ({
           </div>
         )}
 
-        {buttonIcon ||
-          (secondaryButtonLabel && (
-            <div className="gap-3 flex px-4">
-              {buttonIcon && (
-                <>
-                  <Button className="font-normal text-base border flex rounded-3xl bg-white items-center justify-center">
-                    <div className="text-lg text-blue-500">Export</div>
-                    <div className="h-6 w-6 text-slate-400 flex items-center">
-                      {buttonIcon}
-                    </div>
-                  </Button>
-                  <div className="border-r bg-gray-200" />
-                </>
-              )}
+        <div className="gap-3 flex px-4">
+          {buttonIcon && buttonLabel && (
+            <>
+              <Button className="font-normal text-base border flex rounded-3xl bg-white items-center justify-center">
+                {buttonLabel && (
+                  <div className="text-lg text-blue-500">{buttonLabel}</div>
+                )}
+                <div className="h-6 w-6 text-slate-400 flex items-center">
+                  {buttonIcon}
+                </div>
+              </Button>
+              <div className="border-r bg-gray-200" />
+            </>
+          )}
 
-              {secondaryButtonLabel && (
-                <Button className=" font-normal text-base border text-white bg-blue-500  flex rounded-3xl">
-                  <CirclePlus className="h-4 w-4" />
-                  <div className="text-lg">{secondaryButtonLabel}</div>
-                </Button>
+          {secondaryButtonLabel && secondaryButtonIcon && (
+            <Button className=" font-normal text-base border text-white bg-blue-500 gap-2 flex rounded-3xl">
+              {secondaryButtonIcon && (
+                <div className="h-4 w-4 flex items-center">
+                  {secondaryButtonIcon}
+                </div>
               )}
-            </div>
-          ))}
+              <div className="text-lg">{secondaryButtonLabel}</div>
+            </Button>
+          )}
+        </div>
       </div>
     </Card>
   );
