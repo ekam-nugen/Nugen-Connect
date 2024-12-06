@@ -3,7 +3,7 @@ import { Card } from "@/resuableComponents/card";
 import FilterSearchHeader from "@/resuableComponents/filterSearchHeader";
 import HeaderBox from "@/resuableComponents/headerBox/headerBox";
 import { Button } from "@mui/material";
-import { CircleCheck, GraduationCap, Timer } from "lucide-react";
+import { CircleCheck, Filter, GraduationCap, Timer } from "lucide-react";
 import React, { useState } from "react";
 import { TbLayoutBottombarCollapse } from "react-icons/tb";
 import Image from "next/image";
@@ -82,7 +82,11 @@ function TimeClockComponent() {
 
       {activeCard === 0 && (
         <Card className="mx-5 border-none shadow-none rounded-b-xl">
-          <FilterSearchHeader buttonIcon={<IoMdArrowDropdown />} />
+          <FilterSearchHeader
+            buttonIcon={<IoMdArrowDropdown />}
+            filter
+            searchbox
+          />
           <hr className="border-1 border-gray-200 mb-3 mx-5" />
 
           <div className="flex gap-2 justify-items-center px-5 pb-10">
@@ -102,7 +106,7 @@ function TimeClockComponent() {
 
       {activeCard === 1 && (
         <Card className="mx-5 border-none shadow-none rounded-b-xl">
-          <FilterSearchHeader />
+          <FilterSearchHeader filter searchbox />
           <hr className="border-1 border-gray-200 mb-3 mx-5" />
           <div className="mt-12 mb-5 flex justify-center">
             <Image
