@@ -3,6 +3,7 @@ import React from "react";
 import SearchBox from "../SearchBox";
 import { Button } from "@/resuableComponents";
 import { Card } from "../card";
+import { DatePickerWithRange } from "../datepicker";
 
 export interface FilterSearchHeaderProps {
   buttonIcon?: React.ReactNode;
@@ -22,6 +23,11 @@ const FilterSearchHeader = ({
 }: FilterSearchHeaderProps) => {
   return (
     <Card className="bg-white border-none shadow-none rounded-none flex justify-between px-5 py-8">
+      {datePickerWithRange && (
+        <div>
+          <DatePickerWithRange />
+        </div>
+      )}
       {filter && (
         <div className="flex justify-start">
           <Button className="font-normal text-base bg-white  flex rounded-3xl border text-blue-500 ">
