@@ -12,6 +12,7 @@ export interface FilterSearchHeaderProps {
   secondaryButtonLabel?: string;
   buttonLabel?: string;
   secondaryButtonIcon?: React.ReactNode;
+  datePickerWithRange?: boolean;
 }
 const FilterSearchHeader = ({
   buttonIcon,
@@ -19,7 +20,8 @@ const FilterSearchHeader = ({
   searchbox,
   secondaryButtonLabel,
   buttonLabel,
-  secondaryButtonIcon
+  secondaryButtonIcon,
+  datePickerWithRange
 }: FilterSearchHeaderProps) => {
   return (
     <Card className="bg-white border-none shadow-none rounded-none flex justify-between px-5 py-8">
