@@ -14,7 +14,7 @@ import {
   TableHeader,
   TableRow
 } from "@/resuableComponents";
-import { Plus, PlusCircle, Square } from "lucide-react";
+import { PlusCircle, Square } from "lucide-react";
 import { Button } from "@mui/material";
 import {
   UserTableHead,
@@ -72,7 +72,7 @@ function Directory() {
                     : "text-gray-400 bg-zinc-100"
                 }`}
             >
-              <div className="text-lg capitalize">Users</div>
+              <div className="text-lg uppercase tracking-tighter">Users</div>
             </Button>
           </div>
         </div>
@@ -96,7 +96,7 @@ function Directory() {
                     : "text-gray-400 bg-zinc-100"
                 }`}
             >
-              <div className="text-lg capitalize">Work Contact</div>
+              <div className="text-lg uppercase">Work Contact</div>
             </Button>
           </div>
         </div>
@@ -105,7 +105,7 @@ function Directory() {
         <Card className="border-none shadow-none rounded-b-xl">
           <FilterSearchHeader filter={true} searchbox={true} />
           <hr className="border-1 border-gray-200 mb-3 mx-5" />
-          <div className="m-5">
+          <div className="mx-5 mb-5">
             <Table className="mb-16">
               <TableHeader>
                 <TableRow>
@@ -168,7 +168,7 @@ function Directory() {
             filter
           />
           <hr className="border-1 border-gray-200 mb-3 mx-5" />
-          <div className="m-5">
+          <div className="mx-5 mb-5">
             <Table className="mb-16">
               <TableHeader>
                 <TableRow>
