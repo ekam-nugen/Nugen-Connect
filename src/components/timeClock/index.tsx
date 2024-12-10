@@ -31,7 +31,7 @@ function TimeClockComponent() {
       <div className="flex">
         <div
           className={`mx-5 mt-5 h-full ${
-            activeCard === 0 ? "w-1/2 bg-white " : "w-full bg-zinc-100"
+            activeCard === 0 ? "w-1/2" : "w-1/2"
           }`}
         >
           <div
@@ -44,7 +44,7 @@ function TimeClockComponent() {
               className={` text-blue-500 gap-2
                 ${
                   activeCard === 0
-                    ? "border-b border-blue-500 text-blue-500 bg-white"
+                    ? "text-blue-500 bg-white"
                     : "text-gray-400 bg-zinc-100"
                 }`}
             >
@@ -56,7 +56,7 @@ function TimeClockComponent() {
 
         <div
           className={`mx-5 mt-5 h-full ${
-            activeCard === 1 ? "w-full bg-white" : "w-1/2 bg-zinc-100 "
+            activeCard === 1 ? "w-1/2" : "w-1/2"
           }`}
         >
           <div
@@ -69,7 +69,7 @@ function TimeClockComponent() {
               className={` text-blue-500 gap-2
                 ${
                   activeCard === 1
-                    ? "border-b border-blue-500 text-blue-500 bg-white"
+                    ? "text-blue-500 bg-white"
                     : "text-gray-400 bg-zinc-100"
                 }`}
             >

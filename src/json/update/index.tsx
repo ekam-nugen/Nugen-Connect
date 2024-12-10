@@ -65,3 +65,24 @@ export const ScheduledTableRow = [
     ),
   },
 ];
+export const ArchieveTableRow = [
+  { TableHead: <LiaCircleSolid className="w-7 h-7" /> },
+  { TableHead: "" },
+  {TableHead:"Name"},
+  {TableHead:"Comments"},
+  {TableHead:"Likes"},
+  {TableHead:"Views"},
+  {TableHead:"Employees"},
+  {TableHead:"Assigned To"},
+  {TableHead:"Created By"},
+  {TableHead:"Administered by"},
+  {TableHead:"Date Created"},
+  {
+    tableHead: (
+      <div className="flex gap-1 justify-end items-end">
+        <Columns3 />
+        <IoMdArrowDropdown />
+      </div>
+    ),
+  },
+]
