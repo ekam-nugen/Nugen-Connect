@@ -8,7 +8,7 @@ import VideoPlayer from "../../resuableComponents/VideoPlayer";
 
 function LeftSideDashboard() {
   return (
-    <div className="flex flex-col gap-4 items-center">
+    <div className="flex flex-col gap-4 md:gap-2 lg:gap-4 items-center">
       <SmallCard
         title={"You're in the clear"}
         description={

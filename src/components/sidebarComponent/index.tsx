@@ -12,7 +12,7 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
       className={`overflow-y-auto transition-all
       duration-100 ease-in-out`}
     >
-      <div className="mb-2 px-2">
+      <div className="mb-2 px-2 md:px-1 lg:px-2">
         {OverviewItems.map((item: any, index: number) => (
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
@@ -21,15 +21,15 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
           >
             <div
               key={item.label + index}
-              className={`flex items-center mb-2 h-9 rounded-md px-1 group hover:bg-gray-100 shadow-x-lg hover:cursor-pointer ${
+              className={`flex items-center mb-2 h-9 md:h-6 lg:h-9 rounded-md px-1 group hover:bg-gray-100 shadow-x-lg hover:cursor-pointer ${
                 !isCollapsed ? "justify-center" : ""
               }`}
             >
-              <span className="text-xl h-7.5 w-7.5 text-zinc-600 flex items-center justify-center rounded-md px-1">
+              <span className="text-xl lg:h-7.5 lg:w-7.5 h-7.5 w-7.5 md:h-6 md:w-6 text-zinc-600 flex items-center justify-center rounded-md px-1">
                 <item.icon />
               </span>
               {isCollapsed && (
-                <p className="ml-1 font-normal text-sm text-gray-700">
+                <p className="ml-1 font-normal text-sm md:text-xs lg:text-sm text-gray-700">
                   {item?.label}
                 </p>
               )}
@@ -41,7 +41,7 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
 
       {/* user Area  */}
 
-      <div className="mb-2 px-2">
+      <div className="mb-2 px-2 md:px-1 lg:px-2">
         {userItems?.map((item: any, index: number) => (
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
@@ -50,16 +50,16 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
           >
             <div
               key={item.label + index}
-              className={`flex items-center mb-2 h-9 rounded-md px-1 hover:bg-gray-100 group hover:cursor-pointer ${
+              className={`flex items-center mb-2 h-9 md:h-6 lg:h-9 rounded-md px-1 hover:bg-gray-100 group hover:cursor-pointer ${
                 !isCollapsed ? "justify-center" : ""
               }`}
             >
-              <span className="text-xl h-7.5 w-7.5 text-zinc-600 flex items-center justify-center rounded-md px-1 ">
+              <span className="text-xl lg:h-7.5 lg:w-7.5 h-7.5 w-7.5 md:h-6 md:w-6 text-zinc-600 flex items-center justify-center rounded-md px-1 ">
                 <item.icon />
               </span>
 
               {isCollapsed && (
-                <p className="ml-1 font-normal text-sm text-gray-700">
+                <p className="ml-1 font-normal text-sm md:text-xs lg:text-sm text-gray-700">
                   {item?.label}
                 </p>
               )}
@@ -80,10 +80,10 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
           >
             <div
               key={item.label + index}
-              className={`flex items-center mb-0.5 h-10 rounded-md pr-1 hover:bg-gray-100 transition-all group relative hover:cursor-pointer ${
+              className={`flex items-center mb-0.5 h-10 md:h-9 lg:h-10 rounded-md pr-1 hover:bg-gray-100 transition-all group relative hover:cursor-pointer ${
                 !isCollapsed
                   ? "justify-center px-1"
-                  : "duration-500 hover:translate-x-1 transition-transform mr-4"
+                  : "duration-500 hover:translate-x-1 transition-transform mr-4 md:mr-2 lg:mr-4"
               }`}
             >
               {isCollapsed && (
@@ -94,25 +94,25 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
                       : "absolute left-0 flex opacity-0 group-hover:opacity-90 mr-1.5"
                   } transition-opacity duration-100`}
                 >
-                  <Grip className="h-4 w-4 text-gray-500" />
+                  <Grip className="h-4 w-4 md:h-3 md:w-3 lg:h-4 lg:w-4 text-gray-500" />
                 </div>
               )}
               <span
                 className={`text-xl h-6 w-6 text-white flex items-center justify-center rounded-md px-1 ${
                   item.color
-                } ${!isCollapsed ? "ml-0" : "ml-4"}`}
+                } ${!isCollapsed ? "ml-0" : "ml-4 md:ml-3 lg:ml-4"}`}
               >
                 <item.icon />
               </span>
               {isCollapsed && (
-                <p className="ml-1 font-normal text-sm text-gray-700 group-hover:truncate max-w-[120px] text-nowrap">
+                <p className="ml-1 font-normal text-sm md:text-xs lg:text-sm text-gray-700 group-hover:truncate max-w-[120px] text-nowrap">
                   {item?.label}
                 </p>
               )}
               {isCollapsed && (
                 <div className="ml-auto flex justify-end">
                   <span className="group-hover:opacity-90 opacity-0 transition-opacity duration-300">
-                    <EllipsisVertical className="h-4 w-4 text-gray-500" />
+                    <EllipsisVertical className="h-4 w-4 md:h-3 md:w-3 lg:h-4 lg:w-4 text-gray-500" />
                   </span>
                 </div>
               )}
@@ -131,7 +131,7 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
               className={`flex items-center mb-0.5 h-10 rounded-md pr-1 hover:bg-gray-100 transition-all group relative hover:cursor-pointer ${
                 !isCollapsed
                   ? "justify-center"
-                  : "duration-500 hover:translate-x-1 transition-transform mr-4"
+                  : "duration-500 hover:translate-x-1 transition-transform mr-4 md:mr-2 lg:mr-4"
               }`}
             >
               {isCollapsed && (
@@ -148,12 +148,12 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
               <span
                 className={`text-xl h-6 w-6 text-white flex items-center justify-center rounded-md px-1   ${
                   item.color
-                } ${!isCollapsed ? "ml-0" : "ml-4"}`}
+                } ${!isCollapsed ? "ml-0" : "ml-4 md:ml-3 lg:ml-4"}`}
               >
                 <item.icon />
               </span>
               {isCollapsed && (
-                <p className="ml-1 font-normal text-sm text-gray-700 group-hover:truncate max-w-[120px] text-nowrap">
+                <p className="ml-1 font-normal text-sm md:text-xs lg:text-sm text-gray-700 group-hover:truncate max-w-[120px] text-nowrap">
                   {item?.label}
                 </p>
               )}
