@@ -36,8 +36,8 @@ export default function Events() {
             <CardWithImage
               key={value?.title + index}
               title={value?.title}
-              img={value?.image}
               description={value?.description}
+              imgURL={value?.image}
             />
           );
         })}
