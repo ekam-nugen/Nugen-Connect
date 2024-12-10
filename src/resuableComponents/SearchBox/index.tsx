@@ -6,13 +6,13 @@ export default function SearchBox({
   className
 }: Readonly<{ placeholder: string; className?: string }>) {
   return (
-    <div className="flex border-2 rounded-lg px-4 py-2 gap-1 shrink justify-between">
+    <div className="flex border-2 rounded-lg px-4 md:px-2 lg:px-4 md:py-1 lg:py-2 py-2 gap-1 shrink justify-between">
       <input
         type="text"
-        className={`${className} outline-none flex shrink`}
+        className={`${className} outline-none flex md:items-center shrink`}
         placeholder={placeholder}
       />
-      <Search className="text-gray-300 flex justify-end" />
+      <Search className="text-gray-300 flex justify-end items-center md:h-4 md:w-4 md:justify-center md:items-center lg:h-6 lg:w-6" />
     </div>
   );
 }

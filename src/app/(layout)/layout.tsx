@@ -24,7 +24,7 @@ export default function RootLayout({
           <div className="z-10 flex h-[91%] overflow-auto">
             <div
               className={`overflow-y-auto h-full ${
-                isCollapsed ? "w-56" : "w-16"
+                isCollapsed ? "w-56 md:w-48 lg:w-56" : "w-16 md:w-14 lg:w-16"
               }`}
             >
               <div
@@ -42,15 +42,15 @@ export default function RootLayout({
               <SidebarComponent label="" icon="" isCollapsed={isCollapsed} />
               <div
                 className={`fixed bottom-0 left-0 bg-white ${
-                  !isCollapsed ? "w-16 hidden" : "w-44"
+                  !isCollapsed ? "w-16 hidden" : "w-44 md:w-36 lg:w-44"
                 }`}
               >
                 <hr />
                 <div className="mt-auto py-4 px-4 flex items-center hover:text-blue-500 gap-2 rounded-xl cursor-pointer">
                   <span className="text-white bg-blue-500 rounded-full ">
-                    <CirclePlus className="h-4 w-4" />
+                    <CirclePlus className="h-4 w-4 " />
                   </span>
-                  <p className="text-sm">{ADD_SECTION}</p>
+                  <p className="text-sm md:text-xs lg:text-sm">{ADD_SECTION}</p>
                 </div>
               </div>
             </div>

@@ -6,7 +6,7 @@ import {
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectTrigger,
+  SelectTrigger
 } from "./select";
 import { Label } from "../label";
 import SelectSearch from "./selectSearch";
@@ -17,7 +17,7 @@ import {
   Tooltip,
   TooltipProvider,
   TooltipTrigger,
-  TooltipContent,
+  TooltipContent
 } from "../tooltip";
 import Checkbox from "../checkbox";
 
@@ -70,7 +70,7 @@ export const SelectBox = ({
   tooltipText,
   multipleCheck,
   onMultiChange,
-  selectedValues = [],
+  selectedValues = []
 }: SelectBoxProps) => {
   const [filteredOptions, setFilteredOptions] =
     useState<SelectBoxOption[]>(options);
@@ -100,7 +100,7 @@ export const SelectBox = ({
           <div className="flex gap-0.5">
             <Label
               className={cn(lableClass, {
-                "text-red-600": error,
+                "text-red-600": error
               })}
               htmlFor="select"
             >
@@ -111,7 +111,7 @@ export const SelectBox = ({
               <Asterisk
                 size={12}
                 className={cn("text-red-500 cursor-pointer ", iconClass, {
-                  "opacity-40": disable,
+                  "opacity-40": disable
                 })}
               />
             )}
@@ -175,7 +175,7 @@ export const SelectBox = ({
                     <>
                       <div
                         className={cn(
-                          "flex items-start cursor-pointer w-56 rounded-sm py-2 text-wrap px-4 gap-2 text-sm outline-none"
+                          "flex items-start cursor-pointer w-56 md:w-48 lg:w-56 rounded-sm py-2 text-wrap px-4 gap-2 text-sm outline-none"
                         )}
                         onClick={() => handleCheckboxChange(option?.value)}
                       >

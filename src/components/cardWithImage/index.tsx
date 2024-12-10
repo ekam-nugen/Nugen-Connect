@@ -14,7 +14,7 @@ const CardWithImage: React.FC<CardWithImageType> = ({
   description
 }) => {
   return (
-    <Card className="w-56 h-72 py-4 px-5 bg-gray-100 border-none flex flex-col gap-2 items-center shadow-md">
+    <Card className="w-56 md:w-48 lg:w-56 h-72 py-4 px-5 bg-gray-100 border-none flex flex-col gap-2 items-center shadow-md">
       {imgURL && (
         <Image
           height={200}

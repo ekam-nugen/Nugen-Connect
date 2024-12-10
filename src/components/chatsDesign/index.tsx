@@ -7,7 +7,7 @@ import {
   Ellipsis,
   GraduationCap,
   MessagesSquare,
-  Settings,
+  Settings
 } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import ChatBox from "./chatBox";
@@ -19,7 +19,7 @@ import { RiShutDownLine } from "react-icons/ri";
 export const chatsMenu = [
   { heading: "All" },
   { heading: "Unread" },
-  { heading: "Teams" },
+  { heading: "Teams" }
 ];
 
 export const chatPerson = [
@@ -27,9 +27,9 @@ export const chatPerson = [
   { title: "Connecteam Tips", description: "" },
   {
     title: "Pardeep Kumar",
-    description: "hiiiiiiiiiiiiiiiiiiiiiiiii",
+    description: "hiiiiiiiiiiiiiiiiiiiiiiiii"
   },
-  { title: "Harmandeep Singh", description: "" },
+  { title: "Harmandeep Singh", description: "" }
 ];
 
 export type ChatPerson = {
@@ -42,7 +42,7 @@ export type ChatsMenu = {
 };
 export const ModalCardData2 = [
   { icon: <MdOutlineArchive />, text: "Archived Conversation" },
-  { icon: <RiShutDownLine />, text: "Deactivate" },
+  { icon: <RiShutDownLine />, text: "Deactivate" }
 ];
 
 const Chats = () => {
@@ -141,7 +141,7 @@ const Chats = () => {
                             <div className="rounded-full border-gary-200 bg-blue-200 border h-12 w-12 tracking-wide flex uppercase text-white items-center justify-center text-base font-bold">
                               pk
                             </div>
-                            <div className="flex px-1 w-56 justify-start items-start">
+                            <div className="flex px-1 w-56 md:w-48 lg:w-56 justify-start items-start">
                               <div className="flex flex-col">
                                 <div className="text-base font-medium truncate w-[150px] text-zinc-600">
                                   {items?.title}
