@@ -55,7 +55,7 @@ const TopbarComponent = () => {
 
   return (
     <div className="py-2 px-4 w-full flex items-center justify-between">
-      <div className="flex gap-2 shrink">
+      <div className="flex shrink-0">
         <Image
           src={image}
           alt="Logo"
@@ -65,38 +65,33 @@ const TopbarComponent = () => {
         />
         <SearchBox placeholder={"Search anything..."} />
       </div>
-      <div className="flex gap-4 items-center shrink">
-        <div className=" px-2 border-l-2 flex justify-center">
-          <Button className="rounded-full bg-[#af52de]">Upgrade</Button>
-        </div>
-        <div className="text-[#2998ff] flex items-center px-2 border-l-2">
-          <div className="text-2xl">
-            <CgGirl />
+      <div className="flex md:hidden lg:flex shrink-0">
+        <div className="flex items-center">
+          <div className=" px-2 border-l-2 flex justify-center">
+            <Button className="rounded-full bg-[#af52de]">Upgrade</Button>
           </div>
+          <div className="text-[#2998ff] flex items-center px-2 border-l-2">
+            <div className="text-2xl">
+              <CgGirl />
+            </div>
 
-          <div className="whitespace-nowrap">Talk to an Expert</div>
-        </div>
-        <div className="text-[#2998ff] flex items-center px-2 border-l-2">
-          Help
+            <div className="whitespace-nowrap">Talk to an Expert</div>
+          </div>
+          <div className="text-[#2998ff] flex items-center px-2 border-l-2">
+            Help
+          </div>
         </div>
 
-        <div className="whitespace-nowrap hidden 1200:flex 1200:visible">
-          Talk to an Expert
+        <div className="flex items-center gap-3 text-[#8B939C] px-2 border-l-2">
+          <MdAccessibility className="text-2xl" />
+          <PiChats className="text-2xl" />
+          <RiCustomerService2Line className="text-2xl" />
+          <IoMdNotificationsOutline className="text-2xl" />
         </div>
       </div>
-      <div className="text-[#2998ff] flex items-center px-2 border-l-2">
-        Help
-      </div>
-
-      <div className="flex items-center gap-4 text-[#8B939C] px-2 border-l-2">
-        <MdAccessibility className="text-2xl" />
-        <PiChats className="text-2xl" />
-        <RiCustomerService2Line className="text-2xl" />
-        <IoMdNotificationsOutline className="text-2xl" />
-      </div>
-      <div className="flex items-center gap-2 px-2 border-l-2">
+      <div className="flex items-center gap-2 pl-2 border-l-2">
         <div className="relative">
-          <div className="z-0 w-12 h-12 rounded-full">
+          <div className="z-0 w-10 h-10 rounded-full">
             <Image
               src={imagesss}
               alt="image"
@@ -118,7 +113,7 @@ const TopbarComponent = () => {
 
         {modalcard && (
           <div
-            className="absolute pt-52 mt-16  z-50  flex  right-1     items-center "
+            className="absolute pt-52 mt-16 z-50 flex right-1 items-center"
             onClick={closeModel}
           >
             <div className="flex" ref={modalRef}>

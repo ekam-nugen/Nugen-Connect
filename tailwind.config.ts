@@ -13,7 +13,8 @@ const config: Config = {
         foreground: "var(--foreground)"
       },
       screens: {
-        "1200": "1200px"
+        "1200": "1200px",
+        "767": "767px"
       }
     }
   },

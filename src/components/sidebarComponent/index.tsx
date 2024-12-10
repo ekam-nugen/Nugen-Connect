@@ -12,7 +12,7 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
       className={`overflow-y-auto transition-all
       duration-100 ease-in-out`}
     >
-      <div className="mb-2 px-2 h-full">
+      <div className="mb-2 px-2">
         {OverviewItems.map((item: any, index: number) => (
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
@@ -39,8 +39,9 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
         <hr className="border-1 border-zinc-200"></hr>
       </div>
 
-      {/* {/ user Area /} */}
-      <div className="mb-2 px-2 h-full">
+      {/* user Area  */}
+
+      <div className="mb-2 px-2">
         {userItems?.map((item: any, index: number) => (
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
@@ -68,8 +69,9 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
         <hr className="border-1 border-zinc-200"></hr>
       </div>
 
-      {/* {/ sidebar components tabs /} */}
-      <div className="mb-4 h-full items-center">
+      {/* sidebar components tabs */}
+
+      <div className="mb-4 items-center">
         {sidebarItems?.map((item: any, index: number) => (
           <Tooltip
             title={`${isCollapsed ? "" : item?.label}`}
@@ -167,7 +169,7 @@ export default function SidebarComponent({ isCollapsed }: sidebarItemType) {
         ))}
 
         <div
-          className={`pb-6 flex items-center px-2 h-10 mt-2 hover:text-blue-500 gap-2 rounded-xl ${
+          className={`pb-6 flex items-center px-4 py-2 h-10 mt-2 hover:text-blue-500 gap-2 rounded-xl ${
             !isCollapsed ? "justify-center" : ""
           }`}
         >
