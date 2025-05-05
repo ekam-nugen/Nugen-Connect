@@ -10,6 +10,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Pencil } from "lucide-react";
+import ChevronDown from "../../../../public/ChevronDown";
 
 type TableHeaderType = {
   title: string;
@@ -61,12 +62,16 @@ const TableComponent: React.FC<TableComponentProps> = ({
                 <div className="flex items-center gap-1">
                   {header.title}
                   {header.sortable && (
-                    <span className="text-xs">
-                      {sortColumn === header.accessKey
-                        ? sortOrder === "asc"
-                          ? "↑"
-                          : "↓"
-                        : "↕"}
+                    <span
+                      className={`transition-transform duration-200 ${
+                        sortColumn === header.accessKey
+                          ? sortOrder === "asc"
+                            ? "-rotate-180"
+                            : "rotate-0"
+                          : "rotate-0"
+                      }`}
+                    >
+                      <ChevronDown className="w-3 h-3 text-gray-500" />
                     </span>
                   )}
                 </div>
