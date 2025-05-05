@@ -11,9 +11,9 @@ import TimeClock from "@/resuableComponents/timeClock/timeClock";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 function TimeClockComponent() {
-  const [activeCard, setActiveCard] = useState(0);
+  const [activeCard, setActiveCard] = useState<number>(0);
 
-  const handleCardClick = (index: any) => {
+  const handleCardClick = (index: number) => {
     setActiveCard(index);
   };
   return (
@@ -30,9 +30,7 @@ function TimeClockComponent() {
       </div>
       <div className="flex">
         <div
-          className={`mx-5 mt-5 h-full ${
-            activeCard === 0 ? "w-1/2" : "w-1/2"
-          }`}
+          className={`mx-5 mt-5 h-full ${activeCard === 0 ? "w-1/2" : "w-1/2"}`}
         >
           <div
             className={`flex justify-center h-10 text-lg pb-10 pt-6 !rounded-none ${
@@ -55,9 +53,7 @@ function TimeClockComponent() {
         </div>
 
         <div
-          className={`mx-5 mt-5 h-full ${
-            activeCard === 1 ? "w-1/2" : "w-1/2"
-          }`}
+          className={`mx-5 mt-5 h-full ${activeCard === 1 ? "w-1/2" : "w-1/2"}`}
         >
           <div
             className={`flex justify-center h-10 text-lg pb-10 pt-6  ${

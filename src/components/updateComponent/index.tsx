@@ -14,7 +14,7 @@ import { TfiTime } from "react-icons/tfi";
 import { TableBody, TableCell } from "@mui/material";
 
 import Button from "@mui/material/Button";
-import { CircleCheck, PlusCircle, Square } from "lucide-react";
+import { CircleCheck, PlusCircle, PlusIcon, Square } from "lucide-react";
 import React, { useState } from "react";
 import { CiCircleInfo, CiMail } from "react-icons/ci";
 import { FaGraduationCap } from "react-icons/fa";

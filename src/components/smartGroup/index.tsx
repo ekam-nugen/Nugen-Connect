@@ -89,7 +89,7 @@ export default function SmartGroup() {
             <CardWithImage
               key={value?.title + index}
               title={value?.title}
-              img={value?.image}
+              imgURL={value?.image}
               description={value?.description}
             />
           );

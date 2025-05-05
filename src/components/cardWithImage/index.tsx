@@ -3,7 +3,7 @@ import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 interface CardWithImageType {
-  imgURL?: string | StaticImageData | any;
+  imgURL?: string | StaticImageData;
   title?: string;
   description?: string;
 }

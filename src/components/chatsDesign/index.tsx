@@ -7,7 +7,7 @@ import {
   Ellipsis,
   GraduationCap,
   MessagesSquare,
-  Settings
+  Settings,
 } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import ChatBox from "./chatBox";
@@ -19,7 +19,7 @@ import { RiShutDownLine } from "react-icons/ri";
 export const chatsMenu = [
   { heading: "All" },
   { heading: "Unread" },
-  { heading: "Teams" }
+  { heading: "Teams" },
 ];
 
 export const chatPerson = [
@@ -27,9 +27,9 @@ export const chatPerson = [
   { title: "Connecteam Tips", description: "" },
   {
     title: "Pardeep Kumar",
-    description: "hiiiiiiiiiiiiiiiiiiiiiiiii"
+    description: "hiiiiiiiiiiiiiiiiiiiiiiiii",
   },
-  { title: "Harmandeep Singh", description: "" }
+  { title: "Harmandeep Singh", description: "" },
 ];
 
 export type ChatPerson = {
@@ -42,7 +42,7 @@ export type ChatsMenu = {
 };
 export const ModalCardData2 = [
   { icon: <MdOutlineArchive />, text: "Archived Conversation" },
-  { icon: <RiShutDownLine />, text: "Deactivate" }
+  { icon: <RiShutDownLine />, text: "Deactivate" },
 ];
 
 const Chats = () => {
@@ -113,7 +113,11 @@ const Chats = () => {
             {/* {/ chats details /} */}
             <div className="m-5">
               <div className="p-4">
-                <SearchBox placeholder={"Search"} />
+                <SearchBox
+                  placeholder={"Search"}
+                  value={""}
+                  onChange={() => console.log("There Search Box")}
+                />
               </div>
 
               {/* {/ chatMenus /} */}
