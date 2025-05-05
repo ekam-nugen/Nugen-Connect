@@ -79,7 +79,7 @@ function Login() {
     <div className="h-full w-full">
       <div className=" flex justify-center items-center">
         <div className="bg-white rounded-xl shadow-xl flex">
-          <div className="bg-white flex items-center justify-center border-r border-gray-100 w-[313px] rounded-l-xl">
+          <div className="bg-white flex items-center justify-center w-[313px] rounded-l-xl">
             <Image
               src={login}
               alt="Login"
@@ -89,10 +89,13 @@ function Login() {
             />
           </div>
           <div className="flex flex-col gap-2 px-10 pt-10 pb-6 w-[400px] max-w-md">
-            <h1 className="text-2xl font-normal mb-10 text-center text-zinc-500 tracking-tight">
-              A small step for you, a giant leap for your business.
+            <h1 className="text-2xl text-[#2998ff] text-center font-bold">
+              Login
             </h1>
-            <form onSubmit={handleSubmit}>
+            <p className="text-md font-normal text-center text-zinc-500 tracking-tight">
+              A small step for you, a giant leap for your business.
+            </p>
+            <form onSubmit={handleSubmit} className="py-2">
               <div className="mb-4">
                 <input
                   type="email"
@@ -151,32 +154,32 @@ function Login() {
               <div className="items-center justify-center flex capitalize">
                 <Button
                   type="submit"
-                  className="bg-[#2998ff] hover:bg-[#2381D9] text-white py-2.5 px-10 text-lg mt-4 rounded-full"
+                  className="bg-[#2998ff] hover:bg-[#2381D9] text-white py-2 px-10 text-md mt-4 rounded-full"
                   disabled={!!errors.email || !!errors.password}
                   onClick={handleChange}
                 >
-                  Let's Go
+                  Log In
                 </Button>
               </div>
               <div className="flex gap-2 mt-6 items-center justify-center">
                 <Button
                   // onClick={handleGoogleSignUp}
-                  className="bg-[#f8f9fa] hover:bg-gradient-to-r hover:from-[#e8ecef] hover:to-[#d6e4ff] text-gray-700 px-4 text-sm rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="bg-[#f8f9fa] hover:bg-gradient-to-r hover:from-[#e8ecef] hover:to-[#d6e4ff] text-gray-700 px-4 py-2 text-sm rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <FaGoogle size={20} />
                   Google
                 </Button>
                 <Button
                   // onClick={handleFacebookSignUp}
-                  className="bg-[#f8f9fa] hover:bg-gradient-to-r hover:from-[#e8ecef] hover:to-[#d6e4ff] text-gray-700 px-4 text-sm rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:shadow-md"
+                  className="bg-[#f8f9fa] hover:bg-gradient-to-r hover:from-[#e8ecef] hover:to-[#d6e4ff] text-gray-700 px-4 py-2 text-sm rounded-full flex items-center justify-center gap-2 transition-all duration-300 shadow-sm hover:shadow-md"
                 >
                   <FaFacebook size={20} className="text-[#1877F2]" />
                   Facebook
                 </Button>
               </div>
             </form>
-            <div className="flex gap-1 items-center justify-center mt-7">
-              <p className="text-sm text-gray-500 mt-4">
+            <div className="flex gap-1 items-center justify-center mt-1">
+              <p className="text-sm text-gray-500 mt-4 ">
                 Joining with an new account?
               </p>
               <a href="/signup">
