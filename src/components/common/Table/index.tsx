@@ -1,113 +1,136 @@
 "use client";
 
-import React, { useState } from "react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Pencil } from "lucide-react";
-import ChevronDown from "../../../../public/ChevronDown";
+import React from "react";
+import { cn } from "@/lib/utils";
+import { Button, Table, TableBody, TableCell, TableRow } from "@/resuableComponents";
+import { LogIn, LogOut, Printer } from "lucide-react";
+import { CommonTableHeader, RoomApiDataProps, TableProps } from "./constants";
+import { TableHeaderComponent } from "./UtilityComponents";
 
-type TableHeaderType = {
-  title: string;
-  accessKey: string;
-  sortable?: boolean;
-};
-
-type TableComponentProps = {
-  headers: TableHeaderType[];
-  data: Record<string, any>[];
-  onActionClick?: (row: Record<string, any>) => void;
-};
-
-const TableComponent: React.FC<TableComponentProps> = ({
-  headers,
+export default function TableComponent({
   data,
+  headers,
   onActionClick,
-}) => {
-  const [tableData, setTableData] = useState(data);
-  const [sortColumn, setSortColumn] = useState<string | null>(null);
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
-
-  const handleSort = (column: string) => {
-    const order = sortColumn === column && sortOrder === "asc" ? "desc" : "asc";
-    const sortedData = [...tableData].sort((a, b) => {
-      if (a[column] < b[column]) return order === "asc" ? -1 : 1;
-      if (a[column] > b[column]) return order === "asc" ? 1 : -1;
-      return 0;
-    });
-
-    setTableData(sortedData);
-    setSortColumn(column);
-    setSortOrder(order);
-  };
-
+  actionButtonLabel = [{ label: "Action" }],
+  className,
+  notScrolable,
+}: Readonly<TableProps>) {
+  // const {
+  //   handleTableDataSort,
+  //   linkWrapper,
+  //   handleViewOrderClick,
+  //   getArrowIcon,
+  //   selectedOrder,
+  //   sortColumn,
+  //   sortOrder,
+  // } = useTableUtility({
+    // apiUrl: apiUrl,
+    // reduxAction: reduxAction,
+    // sortingData,
+    // limit,/
+    // loader: loader,
+    // data: data,
+    // extraPayload: { organisationId: ogranisation_Id },
+  // });
   return (
-    <div className="overflow-auto max-h-[75vh] w-full rounded-md border border-gray-200 shadow-sm">
-      <Table className="min-w-full text-sm text-gray-700 bg-white rounded-md">
-        <TableHeader className="bg-gray-100 text-gray-600 uppercase tracking-wide text-xs font-medium">
-          <TableRow>
-            {headers.map((header) => (
-              <TableHead
-                key={header.accessKey}
-                onClick={() => header.sortable && handleSort(header.accessKey)}
-                className={`px-4 py-3 text-left cursor-pointer select-none ${
-                  header.sortable ? "hover:underline" : ""
-                }`}
-              >
-                <div className="flex items-center gap-1">
-                  {header.title}
-                  {header.sortable && (
-                    <span
-                      className={`transition-transform duration-200 ${
-                        sortColumn === header.accessKey
-                          ? sortOrder === "asc"
-                            ? "-rotate-180"
-                            : "rotate-0"
-                          : "rotate-0"
-                      }`}
-                    >
-                      <ChevronDown className="w-3 h-3 text-gray-500" />
-                    </span>
-                  )}
-                </div>
-              </TableHead>
-            ))}
-            <TableHead className="px-4 py-3">Edit</TableHead>
-          </TableRow>
-        </TableHeader>
+    <div
+      className={cn(
+        className,
+        "relative w-full",
+        !notScrolable && "overflow-scroll scrollbar-thin",
+        "max-h-[76vh] 2xl:max-h-[80vh]"
+      )}
+    >
+      <Table className="bg-white rounded-lg">
+      {/* {isHeaders && (
+          <TableHeaderComponent
+            sortColumn={sortColumn}
+            sortOrder={sortOrder}
+            headerCellClass={headerCellClass}
+            headers={headers}
+            handleTableDataSort={handleTableDataSort}
+          />
+        )} */}
         <TableBody>
-          {tableData.map((row, rowIndex) => (
+          {data?.map((rowData: RoomApiDataProps, rowIndex: React.Key | null | undefined) => (
             <TableRow
               key={rowIndex}
-              className="hover:bg-gray-50 transition-colors duration-200"
+              className="cursor-pointer hover:bg-gray-100"
             >
-              {headers.map((header) => (
-                <TableCell
-                  key={header.accessKey}
-                  className="px-4 py-3 whitespace-nowrap"
-                >
-                  {row[header.accessKey]}
-                </TableCell>
-              ))}
-              <TableCell className="px-4 py-3">
-                <button
-                  onClick={() => onActionClick?.(row)}
-                  className="bg-gray-100 p-2 rounded-md hover:bg-gray-200 transition"
-                >
-                  <Pencil className="w-4 h-4 text-gray-700" />
-                </button>
-              </TableCell>
+              {headers?.map((header: CommonTableHeader, index: number) => {
+                const { accessKey, title } = header;
+                const value = typeof accessKey === "string" ? rowData[accessKey] : undefined;
+
+                if (accessKey?.toLowerCase() === "action") {
+                  return (
+                    <TableCell
+                      key={title + index.toString()}
+                      className="text-center"
+                    >
+                      <div className="flex justify-center">
+                        {actionButtonLabel?.[0]?.label === "Print Bill" ? (
+                          <Button
+                            className="shadow-md border border-gray-300 text-card-foreground"
+                            variant="ghost"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onActionClick?.fn1(rowData);
+                            }}
+                          >
+                            {actionButtonLabel[0]?.label}
+                            <Printer size={20} />
+                          </Button>
+                        ) : (
+                          <Button
+                            onClick={() =>
+                              !rowData?.isBooked
+                                ? onActionClick?.fn1(rowData)
+                                : onActionClick?.fn2
+                                  ? onActionClick.fn2(rowData)
+                                  : null
+                            }
+                            className={
+                              rowData?.isBooked
+                                ? "bg-card-foreground hover:opacity-80"
+                                : "bg-primary"
+                            }
+                            disabled={!rowData.isActive}
+                          >
+                            <div className="flex gap-2 justify-center">
+                              {rowData?.isBooked ? (
+                                <>
+                                  <LogOut size={20} />
+                                  {actionButtonLabel?.[1]?.label}
+                                </>
+                              ) : (
+                                <>
+                                  <LogIn size={20} />
+                                  {actionButtonLabel?.[0]?.label}
+                                </>
+                              )}
+                            </div>
+                          </Button>
+                        )}
+                      </div>
+                    </TableCell>
+                  );
+                }
+
+                return (
+                  <TableCell
+                    key={title + index.toString()}
+                    className="text-center capitalize"
+                  >
+                    {typeof value === "object"
+                      ? JSON.stringify(value)
+                      : value ?? "—"}
+                  </TableCell>
+                );
+              })}
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </div>
   );
-};
-
-export default TableComponent;
+}
