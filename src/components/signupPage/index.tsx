@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
-function Login() {
+function SignUp() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -93,6 +93,42 @@ function Login() {
               A small step for you, a giant leap for your business.
             </h1>
             <form onSubmit={handleSubmit}>
+              <div className="mb-4 flex gap-2">
+                <div className="">
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    value={formData.firstName}
+                    placeholder="First name"
+                    onChange={handleChange}
+                    className={`border px-5 py-3 w-full rounded-md focus:outline-none text-gray-400
+                      ${
+                        formData.firstName
+                          ? "border-blue-500 shadow-[inset_0_-2px_2px_0px] shadow-blue-300"
+                          : "border-gray-300"
+                      }
+                       focus:border-blue-500 focus:shadow-[inset_0_-2px_2px_0px] focus:shadow-blue-300`}
+                  />
+                </div>
+                <div className="">
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={formData.lastName}
+                    placeholder="Last name"
+                    onChange={handleChange}
+                    className={`border px-5 py-3 w-full rounded-md focus:outline-none text-gray-400
+                      ${
+                        formData.lastName
+                          ? "border-blue-500 shadow-[inset_0_-2px_2px_0px] shadow-blue-300"
+                          : "border-gray-300"
+                      }
+                       focus:border-blue-500 focus:shadow-[inset_0_-2px_2px_0px] focus:shadow-blue-300`}
+                  />
+                </div>
+              </div>
               <div className="mb-4">
                 <input
                   type="email"
@@ -113,7 +149,6 @@ function Login() {
                   <p className="text-[#ff3f3f] text-xs mt-2">{errors.email}</p>
                 )}
               </div>
-
               <div className="mb-4">
                 <div className="relative">
                   <input
@@ -152,7 +187,7 @@ function Login() {
                 <Button
                   type="submit"
                   className="bg-[#2998ff] hover:bg-[#2381D9] text-white py-2.5 px-10 text-lg mt-4 rounded-full"
-                  disabled={!!errors.email || !!errors.password}
+                  // disabled={errors.email || errors.password}
                   onClick={handleChange}
                 >
                   Let's Go
@@ -177,9 +212,9 @@ function Login() {
             </form>
             <div className="flex gap-1 items-center justify-center mt-7">
               <p className="text-sm text-gray-500 mt-4">
-                Joining with an new account?
+                Joining an existing account?
               </p>
-              <a href="/signup">
+              <a href="/login">
                 <p className="text-sm text-[#2998ff] hover:underline mt-4 cursor-pointer decoration-[#2998ff]">
                   Click here
                 </p>
@@ -221,4 +256,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;

@@ -37,7 +37,7 @@ export default function Events() {
               key={value?.title + index}
               title={value?.title}
               description={value?.description}
-              imgURL={value?.image}
+              imgURL={image}
             />
           );
         })}

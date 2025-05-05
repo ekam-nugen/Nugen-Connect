@@ -1,4 +1,4 @@
-import Verification from "@/components/loginPage/verification";
+import Verification from "@/components/signupPage/verification";
 import React from "react";
 
 function VerificationPage() {

@@ -53,7 +53,9 @@ function DashboardComponent() {
               Attendance
             </CardTitle>
             <div className="flex p-4 md:p-2 lg:p-4 justify-end gap-2 items-center">
-              <SearchBox placeholder={"Search"} />
+              <SearchBox placeholder={"Search"} value={""} onChange={function (event: React.ChangeEvent<HTMLInputElement>): void {
+                throw new Error("Function not implemented.");
+              } } />
               <div className="flex justify-center text-blue-500 bg-gary-200 md:h-8 md:w-8 h-10 w-10 border-2 rounded-full items-center cursor-pointer">
                 <RotateCw className="h-5 w-5 flex justify-center items-center md:h-4 md:w-5 lg:h-5 lg:w-5" />
               </div>
@@ -83,7 +85,9 @@ function DashboardComponent() {
               <DropdownMenu />
             </div>
             <div className="flex p-4 justify-end gap-2 items-center">
-              <SearchBox placeholder={"Search"} />
+              <SearchBox placeholder={"Search"} value={""} onChange={function (event: React.ChangeEvent<HTMLInputElement>): void {
+                throw new Error("Function not implemented.");
+              } } />
               <div className="flex justify-center text-blue-500 bg-gary-200 md:h-6 md:w-6 h-8 w-8 rounded-full items-center cursor-pointer">
                 <RotateCw className="h-5 w-5 flex justify-center items-center md:h-4 md:w-5 lg:h-5 lg:w-5" />
               </div>
