@@ -1,18 +1,17 @@
 "use client";
 import * as React from "react";
-import Switch from "@mui/material/Switch";
+import MuiSwitch from "@mui/material/Switch";
 
-export default function ControlledSwitches() {
-  const [checked, setChecked] = React.useState(true);
+interface SwitchProps {
+  checked: boolean;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked);
-  };
-
+export default function Switch({ checked, onChange }: SwitchProps) {
   return (
-    <Switch
+    <MuiSwitch
       checked={checked}
-      onChange={handleChange}
+      onChange={onChange}
       inputProps={{ "aria-label": "controlled" }}
     />
   );

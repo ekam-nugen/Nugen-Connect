@@ -25,7 +25,7 @@ export const TableHeaderComponent = ({
             <TableHead
               key={title + index.toString()}
               className={cn(
-                "sticky top-0 z-30 w-[11%] bg-slate-100 text-black font-bold border-b-2",
+                "sticky top-0 z-30 w-[11%] bg-slate-100 pl-20 text-black font-bold border-b-2",
                 headerCellClass
               )}
             >
