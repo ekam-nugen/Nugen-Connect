@@ -1,22 +1,12 @@
 "use client";
-
-import React from "react";
 import TableComponent from "@/components/common/Table";
-import { CommonTableHeader } from "@/components/common/Table/constants";
 import { QrCode } from "lucide-react";
-
+import { ChangeEvent, useState } from "react";
 
 const Page = () => {
-  const header: CommonTableHeader[] = [
-    { accessKey: "name", title: "Name", sortable: true },
-    { accessKey: "email", title: "Email", sortable: true },
-    { accessKey: "phone", title: "Contact" },
-    // { accessKey: "image", title: "Image" },
-    { accessKey: "icon", title: "Icon" },
-  ];
-
-  const data = [
+  const [tableData, setTableData] = useState([
     {
+      id: "1",
       name: "Alice",
       email: "alice@test.com",
       phone: "1234567890",
@@ -24,6 +14,7 @@ const Page = () => {
       icon: <QrCode className="w-5 h-5" />,
     },
     {
+      id: "2",
       name: "Bob",
       email: "bob@test.com",
       phone: "9876543210",
@@ -31,17 +22,80 @@ const Page = () => {
       icon: <QrCode className="w-5 h-5" />,
     },
     {
+      id: "3",
       name: "Charlie",
       email: "charlie@test.com",
       phone: "1234567890",
       // image: "../../../../public/theme_logo.png",
       icon: <QrCode className="w-5 h-5" />,
     },
+  ]);
+
+  const handleInputChange = (
+    id: string,
+    key: string,
+    value: string | number
+  ) => {
+    const updated = tableData.map((item) =>
+      item.id === id ? { ...item, [key]: value } : item
+    );
+    setTableData(updated);
+  };
+
+  const header: any[] = [
+    {
+      accessKey: "name",
+      title: "Name",
+      sortable: true,
+      cell: ({ row, getValue }: { row: { id: string }; getValue: () => string }) => (
+        <input
+          className="w-full"
+          defaultValue={getValue()}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            handleInputChange(row.id, "name", e.target.value)
+          }
+        />
+      ),
+    },
+    {
+      accessKey: "email",
+      title: "Email",
+      sortable: true,
+      cell: ({ row, getValue }: { row: { id: string }; getValue: () => string }) => (
+        <input
+          className="w-full"
+          defaultValue={getValue()}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            handleInputChange(row.id, "email", e.target.value)
+          }
+        />
+      ),
+    },
+    {
+      accessKey: "phone",
+      title: "Contact",
+      cell: ({ row, getValue }: { row: { id: string }; getValue: () => string }) => (
+        <input
+          className="w-full"
+          defaultValue={getValue()}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            handleInputChange(row.id, "phone", e.target.value)
+          }
+        />
+      ),
+    },
+    { accessKey: "icon", title: "Icon" },
   ];
 
   return (
-    <div>
-      <TableComponent headers={header} data={data} isAction isHeaders />
+    <div className="p-4">
+      <h1 className="text-xl font-bold mb-4">Editable Table Example</h1>
+      <TableComponent
+        headers={header}
+        data={tableData}
+        isAction={false}
+        isHeaders={true}
+      />
     </div>
   );
 };

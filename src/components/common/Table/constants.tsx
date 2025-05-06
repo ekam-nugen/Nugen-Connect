@@ -1,4 +1,3 @@
-
 import React from "react";
 
 export type RoomCommonTypes = {
@@ -36,6 +35,7 @@ export type statusDataProps = {
 export type onActionClickProps = {
   fn1: (rowData: RoomApiDataProps) => void;
   fn2?: (rowData: RoomApiDataProps) => void;
+  onEdit?: any;
 };
 
 export type ActionButtonLabelProps = {
