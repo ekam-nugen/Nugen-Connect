@@ -3,9 +3,13 @@ import TableComponent from "@/components/common/Table";
 import { QrCode } from "lucide-react";
 import { ChangeEvent, useState } from "react";
 import TableImage from "../../../../public/theme_logo.png";
+import {
+  CommonTableHeader,
+  TableDataType,
+} from "@/components/common/Table/constants";
 
 const Page = () => {
-  const [tableData, setTableData] = useState([
+  const [tableData, setTableData] = useState<TableDataType[]>([
     {
       id: "1",
       name: "Alice",
@@ -37,18 +41,24 @@ const Page = () => {
     key: string,
     value: string | number
   ) => {
-    const updated = tableData.map((item) =>
+    const updated = tableData?.map((item) =>
       item.id === id ? { ...item, [key]: value } : item
     );
     setTableData(updated);
   };
 
-  const header: any[] = [
+  const header: CommonTableHeader[] = [
     {
       accessKey: "name",
       title: "Name",
       sortable: true,
-      cell: ({ row, getValue }: { row: { id: string }; getValue: () => string }) => (
+      cell: ({
+        row,
+        getValue,
+      }: {
+        row: { id: string };
+        getValue: () => string;
+      }) => (
         <input
           className="rounded-md border p-1"
           defaultValue={getValue()}
@@ -62,9 +72,15 @@ const Page = () => {
       accessKey: "email",
       title: "Email",
       sortable: true,
-      cell: ({ row, getValue }: { row: { id: string }; getValue: () => string }) => (
+      cell: ({
+        row,
+        getValue,
+      }: {
+        row: { id: string };
+        getValue: () => string;
+      }) => (
         <input
-         className="rounded-md border p-1"
+          className="rounded-md border p-1"
           defaultValue={getValue()}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleInputChange(row.id, "email", e.target.value)
@@ -75,7 +91,13 @@ const Page = () => {
     {
       accessKey: "phone",
       title: "Contact",
-      cell: ({ row, getValue }: { row: { id: string }; getValue: () => string }) => (
+      cell: ({
+        row,
+        getValue,
+      }: {
+        row: { id: string };
+        getValue: () => string;
+      }) => (
         <input
           className="rounded-md border p-1"
           defaultValue={getValue()}
@@ -86,17 +108,12 @@ const Page = () => {
       ),
     },
     { accessKey: "icon", title: "Icon" },
-    { accessKey: "image", title: "Image" }
+    { accessKey: "image", title: "Image" },
   ];
 
   return (
     <div className="p-4">
-      <TableComponent
-        headers={header}
-        data={tableData}
-        isAction={false}
-        isHeaders={true}
-      />
+      <TableComponent headers={header} data={tableData} isHeaders={true} />
     </div>
   );
 };

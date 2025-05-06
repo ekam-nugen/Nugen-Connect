@@ -29,12 +29,7 @@ export const TableHeaderComponent = ({
                 headerCellClass
               )}
             >
-              <div
-                className={cn(
-                  "flex justify-center items-center gap-2",
-                  accessKey === "request" && "justify-start"
-                )}
-              >
+              <div className={cn("flex justify-center items-center gap-2")}>
                 {title}
                 {sortable && (
                   <button

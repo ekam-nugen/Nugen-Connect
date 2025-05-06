@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Table, TableBody, TableCell, TableRow } from "@/resuableComponents";
-import { RoomApiDataProps, TableProps } from "./constants";
+import { TableDataType, TableProps } from "./constants";
 import { TableHeaderComponent } from "./UtilityComponents";
 import { useTableUtility } from "@/hooks/useTableUtility";
 import ViewImageModal from "@/components/viewImageModal";
@@ -11,7 +11,7 @@ export default function TableComponent({
   data,
   headers,
   onActionClick,
-  actionButtonLabel = [{ label: "Action" }],
+  // actionButtonLabel = [{ label: "Action" }],
   className,
   isHeaders,
   headerCellClass,
@@ -46,7 +46,7 @@ export default function TableComponent({
         <TableBody>
           {data?.map(
             (
-              rowData: RoomApiDataProps,
+              rowData: TableDataType,
               rowIndex: React.Key | null | undefined
             ) => (
               <TableRow
@@ -78,17 +78,22 @@ export default function TableComponent({
                     );
                   }
                   if (accessKey?.toLowerCase() === "image" && rowData.image) {
+                    const imageSrc =
+                      typeof rowData.image === "string"
+                        ? rowData.image
+                        : rowData.image.src;
+
                     return (
                       <TableCell key={title + index} className="text-center">
                         <button
                           onClick={(e) => {
                             e.stopPropagation();
-                            handleImageClick(rowData?.image as string); // Uncomment if using modal
+                            handleImageClick(imageSrc);
                           }}
                           className="cursor-pointer"
                         >
                           <img
-                            src={rowData.image?.src}
+                            src={imageSrc}
                             alt={title}
                             width={50}
                             height={50}
@@ -103,7 +108,7 @@ export default function TableComponent({
                       key={title + index}
                       className="text-center capitalize pl-4 md:pl-12 lg:pl-24"
                     >
-                      {value}
+                      {value as ReactNode}
                     </TableCell>
                   );
                 })}
