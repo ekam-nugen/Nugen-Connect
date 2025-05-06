@@ -21,6 +21,8 @@ const Page = () => {
       phone: "1234567890",
       image: NatureImage,
       icon: <QrCode className="w-5 h-5" />,
+      button: { label: "Edit" },
+      switch: true,
     },
     {
       id: "2",
@@ -29,6 +31,8 @@ const Page = () => {
       phone: "9876543210",
       image: SunsetImage,
       icon: <Crown className="w-5 h-5" />,
+      button: { label: "Edit" },
+      switch: true,
     },
     {
       id: "3",
@@ -37,6 +41,8 @@ const Page = () => {
       phone: "1234567890",
       image: PlantImage,
       icon: <Radar className="w-5 h-5" />,
+      button: { label: "Edit" },
+      switch: true,
     },
   ]);
 
@@ -113,6 +119,8 @@ const Page = () => {
     },
     { accessKey: "icon", title: "Icon" },
     { accessKey: "image", title: "Image" },
+    { accessKey: "button", title: "Button" },
+    { accessKey: "switch", title: "Switch" },
   ];
 
   return (

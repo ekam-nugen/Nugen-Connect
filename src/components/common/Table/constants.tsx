@@ -23,9 +23,15 @@ export type onActionClickProps = {
   fn1: (rowData: TableDataType) => void;
   fn2?: (rowData: TableDataType) => void;
   onEdit?: (newData: TableDataType[]) => void;
+  onToggle?: (rowData: TableDataType) => void;
 };
 
 export type TableDataType = {
+  button?: {
+    label?: string;
+    onClick?: (row: TableDataType) => void;
+  };
+  switch?: boolean;
   id: string;
   name?: string;
   email?: string;
