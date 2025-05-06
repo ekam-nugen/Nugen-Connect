@@ -7,7 +7,7 @@ import { useState } from "react";
 import { ADD_SECTION } from "@/en";
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {

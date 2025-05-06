@@ -125,7 +125,7 @@ const Page = () => {
 
   return (
     <div className="p-4">
-      <TableTopbar isSearch />
+      <TableTopbar isSearch isDatePicker />
       <TableComponent headers={header} data={tableData} isHeaders={true} />
     </div>
   );
