@@ -2,6 +2,7 @@
 import TableComponent from "@/components/common/Table";
 import { QrCode } from "lucide-react";
 import { ChangeEvent, useState } from "react";
+import TableImage from "../../../../public/theme_logo.png";
 
 const Page = () => {
   const [tableData, setTableData] = useState([
@@ -10,7 +11,7 @@ const Page = () => {
       name: "Alice",
       email: "alice@test.com",
       phone: "1234567890",
-      // image: "../../../../public/theme_logo.png",
+      image: TableImage,
       icon: <QrCode className="w-5 h-5" />,
     },
     {
@@ -18,7 +19,7 @@ const Page = () => {
       name: "Bob",
       email: "bob@test.com",
       phone: "9876543210",
-      // image: "../../../../public/theme_logo.png",
+      image: TableImage,
       icon: <QrCode className="w-5 h-5" />,
     },
     {
@@ -26,7 +27,7 @@ const Page = () => {
       name: "Charlie",
       email: "charlie@test.com",
       phone: "1234567890",
-      // image: "../../../../public/theme_logo.png",
+      image: TableImage,
       icon: <QrCode className="w-5 h-5" />,
     },
   ]);
@@ -49,7 +50,7 @@ const Page = () => {
       sortable: true,
       cell: ({ row, getValue }: { row: { id: string }; getValue: () => string }) => (
         <input
-          className="w-full"
+          className="rounded-md border p-1"
           defaultValue={getValue()}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleInputChange(row.id, "name", e.target.value)
@@ -63,7 +64,7 @@ const Page = () => {
       sortable: true,
       cell: ({ row, getValue }: { row: { id: string }; getValue: () => string }) => (
         <input
-          className="w-full"
+         className="rounded-md border p-1"
           defaultValue={getValue()}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleInputChange(row.id, "email", e.target.value)
@@ -76,7 +77,7 @@ const Page = () => {
       title: "Contact",
       cell: ({ row, getValue }: { row: { id: string }; getValue: () => string }) => (
         <input
-          className="w-full"
+          className="rounded-md border p-1"
           defaultValue={getValue()}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             handleInputChange(row.id, "phone", e.target.value)
@@ -85,6 +86,7 @@ const Page = () => {
       ),
     },
     { accessKey: "icon", title: "Icon" },
+    { accessKey: "image", title: "Image" }
   ];
 
   return (

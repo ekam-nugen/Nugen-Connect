@@ -1,14 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Table, TableBody, TableCell, TableRow } from "@/resuableComponents";
 import { RoomApiDataProps, TableProps } from "./constants";
 import { TableHeaderComponent } from "./UtilityComponents";
 import { useTableUtility } from "@/hooks/useTableUtility";
-// import Image, { StaticImageData } from "next/image";
-// import ViewImageModal from "@/components/viewImageModal";
-// import DefaultImage from "../../../../public/Waterfall-landscape.jpg";
+import ViewImageModal from "@/components/viewImageModal";
 export default function TableComponent({
   data,
   headers,
@@ -23,14 +21,9 @@ export default function TableComponent({
   const { handleTableDataSort, sortColumn, sortOrder } = useTableUtility({
     sortingData,
   });
-  // const [selectedImage, setSelectedImage] = useState<StaticImageData | null>(null);
-  // const handleImageClick = (imageUrl: StaticImageData) => {
-  //   setSelectedImage(imageUrl);
-  // };
-
-  // const closeModal = () => {
-  //   setSelectedImage(null);
-  // };
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const handleImageClick = (imageUrl: string) => setSelectedImage(imageUrl);
+  const closeModal = () => setSelectedImage(null);
   return (
     <div
       className={cn(
@@ -71,7 +64,7 @@ export default function TableComponent({
                     return (
                       <TableCell
                         key={title + index}
-                        className="text-center capitalize pl-4 md:pl-12 lg:pl-32"
+                        className="text-center capitalize pl-4 md:pl-12 lg:pl-24"
                       >
                         {cell({
                           row: rowData,
@@ -81,30 +74,34 @@ export default function TableComponent({
                             onActionClick?.onEdit?.(newData);
                           },
                         })}
-                            {/* {accessKey?.toLowerCase() === "image" &&
-                              rowData.image && (
-                                <button
-                                  onClick={() => handleImageClick(rowData?.image)}
-                                  className="cursor-pointer"
-                                  aria-label="View image"
-                                >
-                                  <img
-                                    src={rowData.image}
-                                    alt=""
-                                    width={60}
-                                    height={60}
-                                    className="object-cover"
-                                  />
-                                </button>
-                              )} */}
                       </TableCell>
                     );
                   }
-
+                  if (accessKey?.toLowerCase() === "image" && rowData.image) {
+                    return (
+                      <TableCell key={title + index} className="text-center">
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleImageClick(rowData?.image as string); // Uncomment if using modal
+                          }}
+                          className="cursor-pointer"
+                        >
+                          <img
+                            src={rowData.image?.src}
+                            alt={title}
+                            width={50}
+                            height={50}
+                            className="object-cover"
+                          />
+                        </button>
+                      </TableCell>
+                    );
+                  }
                   return (
                     <TableCell
                       key={title + index}
-                      className="text-center capitalize pl-4 md:pl-12 lg:pl-44"
+                      className="text-center capitalize pl-4 md:pl-12 lg:pl-24"
                     >
                       {value}
                     </TableCell>
@@ -115,9 +112,9 @@ export default function TableComponent({
           )}
         </TableBody>
       </Table>
-      {/* {selectedImage && (
+      {selectedImage && (
         <ViewImageModal closeModal={closeModal} selectedImage={selectedImage} />
-      )} */}
+      )}
     </div>
   );
 }

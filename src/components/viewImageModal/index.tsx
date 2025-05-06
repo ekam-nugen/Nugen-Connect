@@ -1,5 +1,5 @@
 import { X } from "lucide-react";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 
 import React from "react";
 
@@ -8,7 +8,7 @@ function ViewImageModal({
   selectedImage,
 }: Readonly<{
   closeModal: () => void;
-  selectedImage: StaticImageData;
+  selectedImage: string;
 }>) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
