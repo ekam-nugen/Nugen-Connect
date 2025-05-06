@@ -1,8 +1,11 @@
 "use client";
 import TableComponent from "@/components/common/Table";
-import { QrCode } from "lucide-react";
+import { Crown, QrCode, Radar } from "lucide-react";
 import { ChangeEvent, useState } from "react";
-import TableImage from "../../../../public/theme_logo.png";
+import NatureImage from "../../../../public/Nature.jpg";
+import SunsetImage from "../../../../public/Sunset.jpeg";
+import PlantImage from "../../../../public/Plant.jpeg";
+
 import {
   CommonTableHeader,
   TableDataType,
@@ -15,7 +18,7 @@ const Page = () => {
       name: "Alice",
       email: "alice@test.com",
       phone: "1234567890",
-      image: TableImage,
+      image: NatureImage,
       icon: <QrCode className="w-5 h-5" />,
     },
     {
@@ -23,16 +26,16 @@ const Page = () => {
       name: "Bob",
       email: "bob@test.com",
       phone: "9876543210",
-      image: TableImage,
-      icon: <QrCode className="w-5 h-5" />,
+      image: SunsetImage,
+      icon: <Crown className="w-5 h-5" />,
     },
     {
       id: "3",
       name: "Charlie",
       email: "charlie@test.com",
       phone: "1234567890",
-      image: TableImage,
-      icon: <QrCode className="w-5 h-5" />,
+      image: PlantImage,
+      icon: <Radar className="w-5 h-5" />,
     },
   ]);
 

@@ -12,10 +12,10 @@ function ViewImageModal({
 }>) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-4 rounded-lg shadow-lg max-w-lg w-full">
+      <div className="p-6 max-w-5xl w-full">
         <button
           onClick={closeModal}
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 bg-gray-100 p-2 rounded-full transition duration-200"
+          className="absolute top-4 right-56 text-gray-500 hover:text-gray-700 bg-gray-100 p-2 rounded-full transition duration-200"
           aria-label="Close"
         >
           <X className="w-5 h-5" />
