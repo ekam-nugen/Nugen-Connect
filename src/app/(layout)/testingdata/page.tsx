@@ -1,6 +1,7 @@
 "use client";
 import TableComponent from "@/components/common/Table";
 import { Crown, QrCode, Radar } from "lucide-react";
+import TableTopbar from "@/components/common/tableTopBar";
 import { ChangeEvent, useState } from "react";
 import NatureImage from "../../../../public/Nature.jpg";
 import SunsetImage from "../../../../public/Sunset.jpeg";
@@ -116,6 +117,7 @@ const Page = () => {
 
   return (
     <div className="p-4">
+      <TableTopbar isSearch />
       <TableComponent headers={header} data={tableData} isHeaders={true} />
     </div>
   );
