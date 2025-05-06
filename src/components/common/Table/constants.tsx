@@ -52,6 +52,7 @@ export type RoomApiDataProps = RoomCommonTypes &
     taxType?: string;
     reviews?: string;
     otp?: string;
+    icon?: React.ReactNode;
     serviceId?: string;
     roomQR?: string;
     guestName: string;
@@ -124,12 +125,8 @@ export type TableProps = {
   isHeaders?: boolean;
   headerCellClass?: string;
   tableCellClass?: string;
-  onEditClick?: (
-    data: any
-  ) => void | Promise<void>;
-  onAddOrder?: (
-    data: any
-  ) => void | Promise<void>;
+  onEditClick?: (data: any) => void | Promise<void>;
+  onAddOrder?: (data: any) => void | Promise<void>;
   data: any;
   isViewOrderClick?: boolean;
   switchData?: statusDataProps;

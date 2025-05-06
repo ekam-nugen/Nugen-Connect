@@ -3,7 +3,6 @@ import { CommonTableHeader } from "./constants";
 import ChevronDown from "../../../../public/ChevronDown";
 import { cn } from "@/lib/utils";
 
-
 export const TableHeaderComponent = ({
   headers,
   sortOrder,
@@ -17,52 +16,46 @@ export const TableHeaderComponent = ({
   headers: CommonTableHeader[];
   handleTableDataSort: (column: string) => void;
 }) => {
- 
   return (
     <TableHeader className="w-full bg-slate-100">
       <TableRow className="w-full">
-        {headers
-          ?.filter(
-            (header: CommonTableHeader) =>
-              (header.title.toLowerCase() !== "SMALL_ORGANISATION" &&
-                header.title.toLowerCase() !== "SMALL_HOTELNAME")
-          )
-          .map((header: CommonTableHeader, index: number) => {
-            const { accessKey, title, sortable } = header;
-            return (
-              <TableHead
-                key={title + index.toString()}
+        {headers?.map((header: CommonTableHeader, index: number) => {
+          const { accessKey, title, sortable } = header;
+          return (
+            <TableHead
+              key={title + index.toString()}
+              className={cn(
+                "sticky top-0 z-30 w-[11%] bg-slate-100 text-black font-bold border-b-2",
+                headerCellClass
+              )}
+            >
+              <div
                 className={cn(
-                  "sticky top-0 z-30 w-[11%] bg-slate-100 text-black font-bold border-b-2",
-                  headerCellClass
+                  "flex justify-center items-center gap-2",
+                  accessKey === "request" && "justify-start"
                 )}
               >
-                <div
-                  className={cn(
-                    "flex justify-center items-center gap-2",
-                    accessKey === "SMALL_REQUEST" && "justify-start"
-                  )}
-                >
-                  {title}
-                  {sortable && (
-                    <button
-                      title="Sort"
-                      onClick={() => {
-                        handleTableDataSort(accessKey);
-                      }}
-                    >
-                      <ChevronDown
-                        className={`w-3 ease-in-out transition-all ${sortColumn === accessKey && sortOrder
-                            ? "rotate-180"
-                            : ""
-                          }`}
-                      />
-                    </button>
-                  )}
-                </div>
-              </TableHead>
-            );
-          })}
+                {title}
+                {sortable && (
+                  <button
+                    title="Sort"
+                    onClick={() => {
+                      handleTableDataSort(accessKey);
+                    }}
+                  >
+                    <ChevronDown
+                      className={`w-3 ease-in-out transition-all ${
+                        sortColumn === accessKey && sortOrder
+                          ? "rotate-180"
+                          : ""
+                      }`}
+                    />
+                  </button>
+                )}
+              </div>
+            </TableHead>
+          );
+        })}
       </TableRow>
     </TableHeader>
   );
