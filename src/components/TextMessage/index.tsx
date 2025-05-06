@@ -20,7 +20,7 @@ function TextMessage() {
         secondayButtonIcon={<CiCirclePlus />}
       />
 
-      <FilterSearchHeader datePickerWithRange searchbox />
+      <FilterSearchHeader searchbox />
       <hr className="border-1 border-gray-200  mx-5" />
       <TextComponent
         icon={<GoPlus />}
