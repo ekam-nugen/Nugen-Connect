@@ -1,4 +1,4 @@
-import TopbarComponent from "@/components/topbarComponent";
+import TopbarComponent from "@/components/topbar-temp";
 import React from "react";
 
 function TopBar() {

@@ -1,6 +1,6 @@
 import { CirclePlus, ListFilter } from "lucide-react";
 import React from "react";
-import SearchBox from "../SearchBox";
+import SearchBox from "../searchBox-temp";
 import { Button } from "@/resuableComponents";
 import { Card } from "../card";
 

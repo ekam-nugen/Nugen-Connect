@@ -1,10 +1,12 @@
 "use client";
-import TopbarComponent from "@/components/topbarComponent";
+
 import "./globals.css";
-import SidebarComponent from "@/components/sidebarComponent";
+
 import { ChevronLeft, ChevronRight, CirclePlus } from "lucide-react";
 import { useState } from "react";
 import { ADD_SECTION } from "@/en";
+import TopbarComponent from "@/components/topbar-temp";
+import SidebarComponent from "@/components/sidebar-temp";
 
 export default function RootLayout({
   children,

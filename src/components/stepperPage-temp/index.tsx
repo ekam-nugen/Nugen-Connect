@@ -1,7 +1,5 @@
 import CloseStepper from "@/resuableComponents/closeStepper";
-import StepperFooter from "@/resuableComponents/stepperfooter";
-import TimeClock from "@/resuableComponents/timeClock/timeClock";
-import { Stepper } from "@mui/material";
+import StepperFooter from "@/resuableComponents/stepperFooter-temp";
 import React from "react";
 import TimeClockComponent from "../timeClock";
 
