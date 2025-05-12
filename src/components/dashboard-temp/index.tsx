@@ -1,14 +1,14 @@
 "use client";
-import { quickTask, attendance, checklistItems } from "@/json/dashboard";
-import { DropdownMenu } from "@/resuableComponents";
-import { Card, CardTitle, CardDescription } from "@/resuableComponents/card";
-import SearchBox from "@/resuableComponents/SearchBox";
-import { Button } from "@mui/material";
-import { GiUbisoftSun } from "react-icons/gi";
 import React from "react";
-import { RotateCw } from "lucide-react";
+import { Button } from "@mui/material";
 import { motion } from "framer-motion";
+import { RotateCw } from "lucide-react";
+import { GiUbisoftSun } from "react-icons/gi";
+import { DropdownMenu } from "@/resuableComponents";
 import LeftSideDashboard from "../leftSideDashboard";
+import SearchBox from "@/resuableComponents/searchBox-temp";
+import { quickTask, attendance, checklistItems } from "@/json/dashboard";
+import { Card, CardTitle, CardDescription } from "@/resuableComponents/card";
 
 function DashboardComponent() {
   return (

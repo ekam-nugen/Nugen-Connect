@@ -1,5 +1,5 @@
-import DashboardComponent from "@/components/dashboardComponent";
 import React from "react";
+import DashboardComponent from "@/components/dashboard-temp";
 
 function DashboardPage() {
   return <DashboardComponent />;

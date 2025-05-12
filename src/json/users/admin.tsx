@@ -1,4 +1,4 @@
-import ControlledSwitches from "@/resuableComponents/switch";
+import Switch from "@/resuableComponents/switch";
 import { Check, Columns3 } from "lucide-react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { PiCrownSimpleFill } from "react-icons/pi";
@@ -17,7 +17,14 @@ export const adminTableCell = [
     permission: "All features",
     AdminTab: (
       <div>
-        <ControlledSwitches />
+        <Switch
+          checked={false}
+          onChange={function (
+            event: React.ChangeEvent<HTMLInputElement>
+          ): void {
+            throw new Error("Function not implemented.");
+          }}
+        />
       </div>
     ),
     accepted: (
@@ -25,8 +32,8 @@ export const adminTableCell = [
         <Check />
       </div>
     ),
-    lastLogin: "05/12/24"
-  }
+    lastLogin: "05/12/24",
+  },
 ];
 
 export const adminTableHead = [
@@ -46,6 +53,6 @@ export const adminTableHead = [
         <Columns3 />
         <IoMdArrowDropdown />
       </div>
-    )
-  }
+    ),
+  },
 ];

@@ -1,16 +1,15 @@
 "use client";
-import TableComponent from "@/components/common/Table";
 import { Crown, QrCode, Radar } from "lucide-react";
 import TableTopbar from "@/components/common/tableTopBar";
 import { ChangeEvent, useState } from "react";
 import NatureImage from "../../../../public/Nature.jpg";
 import SunsetImage from "../../../../public/Sunset.jpeg";
 import PlantImage from "../../../../public/Plant.jpeg";
-
+import TableComponent from "@/components/common/table-temp";
 import {
   CommonTableHeader,
   TableDataType,
-} from "@/components/common/Table/constants";
+} from "@/components/common/table-temp/constants";
 
 const Page = () => {
   const [tableData, setTableData] = useState<TableDataType[]>([

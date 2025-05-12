@@ -1,6 +1,6 @@
 "use client";
 import { Card, CardDescription } from "@/resuableComponents/card";
-import SearchBox from "@/resuableComponents/SearchBox";
+
 import { Button } from "@mui/material";
 import { BsPinFill } from "react-icons/bs";
 import {
@@ -15,6 +15,7 @@ import ChatBox from "./chatBox";
 import IconTextModal from "@/resuableComponents/iconTextModal";
 import { MdOutlineArchive } from "react-icons/md";
 import { RiShutDownLine } from "react-icons/ri";
+import SearchBox from "@/resuableComponents/searchBox-temp";
 
 export const chatsMenu = [
   { heading: "All" },
