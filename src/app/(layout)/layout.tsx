@@ -5,7 +5,7 @@ import "./globals.css";
 import { ChevronLeft, ChevronRight, CirclePlus } from "lucide-react";
 import { useState } from "react";
 import { ADD_SECTION } from "@/en";
-import TopbarComponent from "@/components/topbar-temp";
+import TopbarComponent from "@/components/topbar";
 import SidebarComponent from "@/components/sidebar";
 
 export default function RootLayout({
