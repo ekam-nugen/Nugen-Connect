@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useRouter } from "next/navigation";
-import OTP from "@/resuableComponents/otp-temp";
+import OTP from "@/resuableComponents/otp";
 
 function OTPVerification() {
   const router = useRouter();

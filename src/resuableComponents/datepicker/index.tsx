@@ -10,7 +10,7 @@ import { Calendar } from "../datepicker/Calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "../datepicker/Popover";
 import { cn } from "../../lib/utils";
 import { useEffect, useState } from "react";
-import SelectBox from "../selectBox-temp";
+import SelectBox from "../selectBox";
 
 type DatePickerProps = {
   className?: string;
