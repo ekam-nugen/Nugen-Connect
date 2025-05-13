@@ -12,7 +12,7 @@ import { Label } from "../label";
 import SelectSearch from "./SelectSearch-temp"
 import { AlertCircle, Asterisk } from "lucide-react";
 import { cn } from "@/lib/utils";
-import PageLoader from "../common/Loader-temp";
+import PageLoader from "../common/Loader";
 import {
   Tooltip,
   TooltipProvider,
