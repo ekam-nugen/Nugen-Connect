@@ -5,11 +5,11 @@ import { ChangeEvent, useState } from "react";
 import NatureImage from "../../../../public/Nature.jpg";
 import SunsetImage from "../../../../public/Sunset.jpeg";
 import PlantImage from "../../../../public/Plant.jpeg";
-import TableComponent from "@/components/common/table-temp";
+import TableComponent from "@/components/common/table";
 import {
   CommonTableHeader,
   TableDataType,
-} from "@/components/common/table-temp/constants";
+} from "@/components/common/table/constants";
 
 const Page = () => {
   const [tableData, setTableData] = useState<TableDataType[]>([

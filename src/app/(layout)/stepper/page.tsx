@@ -1,4 +1,4 @@
-import Stepperpage from "@/components/stepperPage-temp";
+import Stepperpage from "@/components/stepperPage";
 import React from "react";
 
 function page() {

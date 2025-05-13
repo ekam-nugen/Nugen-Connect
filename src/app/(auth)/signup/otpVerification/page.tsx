@@ -1,5 +1,5 @@
 
-import OTPVerification from "@/components/signupPage/OtpVerification-temp";
+import OTPVerification from "@/components/signupPage/OtpVerification";
 import React from "react";
 
 function OtpPage() {

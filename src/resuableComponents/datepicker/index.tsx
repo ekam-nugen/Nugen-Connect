@@ -6,11 +6,11 @@ import { Calendar as CalendarIcon } from "lucide-react";
 import { DateRange } from "react-day-picker";
 
 import { Button } from "../button";
-import { Calendar } from "../datepicker/Calendar-temp";
-import { Popover, PopoverContent, PopoverTrigger } from "../datepicker/Popover-temp";
+import { Calendar } from "../datepicker/Calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "../datepicker/Popover";
 import { cn } from "../../lib/utils";
 import { useEffect, useState } from "react";
-import SelectBox from "../selectBox-temp";
+import SelectBox from "../selectBox";
 
 type DatePickerProps = {
   className?: string;

@@ -1,5 +1,5 @@
 import CloseStepper from "@/resuableComponents/closeStepper";
-import StepperFooter from "@/resuableComponents/stepperFooter-temp";
+import StepperFooter from "@/resuableComponents/stepperFooter";
 import React from "react";
 import TimeClockComponent from "../timeClock";
 

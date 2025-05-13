@@ -1,5 +1,5 @@
 import CardWithImage from "@/components/cardWithImage";
-import VideoPlayer from "@/resuableComponents/videoPlayer-temp";
+import VideoPlayer from "@/resuableComponents/videoPlayer";
 import { Button } from "@/resuableComponents";
 import React from "react";
 import image from "../../../public/Waterfall-landscape.jpg";

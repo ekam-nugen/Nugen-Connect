@@ -1,4 +1,4 @@
-import TextMessage from "@/components/textMessage-temp";
+import TextMessage from "@/components/textMessage";
 import React from "react";
 
 function page() {

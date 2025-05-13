@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import image from "../../../public/theme_logo.png";
-import SearchBox from "@/resuableComponents/searchBox-temp";
+import SearchBox from "@/resuableComponents/searchBox";
 import { Button } from "@/resuableComponents";
 import { CgGirl, CgLogOff, CgProfile } from "react-icons/cg";
 import { MdAccessibility } from "react-icons/md";
