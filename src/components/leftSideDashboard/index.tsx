@@ -4,7 +4,7 @@ import SmallCard from "@/resuableComponents/smallCard";
 import { Check, X } from "lucide-react";
 import React from "react";
 import { PiNumberThreeBold } from "react-icons/pi";
-import VideoPlayer from "../../resuableComponents/videoPlayer-temp";
+import VideoPlayer from "../../resuableComponents/videoPlayer";
 
 function LeftSideDashboard() {
   return (

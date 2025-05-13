@@ -7,12 +7,12 @@ import {
   SelectGroup,
   SelectItem,
   SelectTrigger
-} from "./Select-temp";
+} from "./Select";
 import { Label } from "../label";
-import SelectSearch from "./SelectSearch-temp"
+import SelectSearch from "./SelectSearch"
 import { AlertCircle, Asterisk } from "lucide-react";
 import { cn } from "@/lib/utils";
-import PageLoader from "../common/Loader-temp";
+import PageLoader from "../common/Loader";
 import {
   Tooltip,
   TooltipProvider,

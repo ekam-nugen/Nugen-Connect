@@ -6,7 +6,7 @@ import { RotateCw } from "lucide-react";
 import { GiUbisoftSun } from "react-icons/gi";
 import { DropdownMenu } from "@/resuableComponents";
 import LeftSideDashboard from "../leftSideDashboard";
-import SearchBox from "@/resuableComponents/searchBox-temp";
+import SearchBox from "@/resuableComponents/searchBox";
 import { quickTask, attendance, checklistItems } from "@/json/dashboard";
 import { Card, CardTitle, CardDescription } from "@/resuableComponents/card";
 
