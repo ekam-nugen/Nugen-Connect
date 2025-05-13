@@ -1,4 +1,4 @@
-import SidebarComponent from "@/components/sidebar-temp";
+import SidebarComponent from "@/components/sidebar";
 import React from "react";
 
 function SidebarComponentPage() {
